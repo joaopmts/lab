@@ -19,10 +19,6 @@ def data_extract(**context):
         start_date = start_date - timedelta(days=7)
         end_date = start_date + timedelta(days=6)
 
-        if end_date >= today:
-            print(f"[SKIP] Semana {start_date} a {end_date} ainda está incompleta. Nenhum dado extraído.")
-            return
-
     start_str = start_date.strftime('%Y-%m-%d')
     end_str = end_date.strftime('%Y-%m-%d')
 
@@ -44,7 +40,7 @@ def data_extract(**context):
     data_json = response.json()["daily"]
     df = pd.DataFrame(data_json)
 
-    folder_path = f'/home/airflow/host_documents/week{start_str}/'
+    folder_path = f'/home/airflow/host_documents/climate_data_project/week{start_str}/'
     os.makedirs(folder_path, exist_ok=True)
 
     df.to_csv(os.path.join(folder_path, 'raw_data.csv'), index=False)
@@ -68,7 +64,7 @@ with DAG(
 
     task1 = BashOperator(
         task_id='create_folder',
-        bash_command='mkdir -p "/home/airflow/host_documents/week{{data_interval_end.strftime("%Y-%m-%d")}}"'
+        bash_command='mkdir -p "/home/airflow/host_documents/climate_data_project/week{{data_interval_end.strftime("%Y-%m-%d")}}"'
     )
 
     task2 = PythonOperator(
