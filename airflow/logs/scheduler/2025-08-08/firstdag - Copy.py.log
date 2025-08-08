@@ -1,0 +1,34 @@
+[2025-08-08T01:08:08.164+0000] {processor.py:161} INFO - Started process (PID=180) to work on /opt/airflow/dags/firstdag - Copy.py
+[2025-08-08T01:08:08.168+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/firstdag - Copy.py for tasks to queue
+[2025-08-08T01:08:08.186+0000] {logging_mixin.py:188} INFO - [2025-08-08T01:08:08.184+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/firstdag - Copy.py
+[2025-08-08T01:08:08.217+0000] {logging_mixin.py:188} INFO - [2025-08-08T01:08:08.215+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/firstdag - Copy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/firstdag - Copy.py", line 8
+    ) as dag:
+             ^
+IndentationError: expected an indented block
+[2025-08-08T01:08:08.220+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/firstdag - Copy.py
+[2025-08-08T01:08:08.256+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/firstdag - Copy.py took 0.136 seconds
+[2025-08-08T01:08:38.357+0000] {processor.py:161} INFO - Started process (PID=190) to work on /opt/airflow/dags/firstdag - Copy.py
+[2025-08-08T01:08:38.358+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/firstdag - Copy.py for tasks to queue
+[2025-08-08T01:08:38.360+0000] {logging_mixin.py:188} INFO - [2025-08-08T01:08:38.359+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/firstdag - Copy.py
+[2025-08-08T01:08:38.367+0000] {logging_mixin.py:188} INFO - [2025-08-08T01:08:38.366+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/firstdag - Copy.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/firstdag - Copy.py", line 8
+    ) as dag:
+             ^
+IndentationError: expected an indented block
+[2025-08-08T01:08:38.367+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/firstdag - Copy.py
+[2025-08-08T01:08:38.381+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/firstdag - Copy.py took 0.029 seconds

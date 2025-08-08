@@ -1,0 +1,63 @@
+[2025-08-08T01:23:16.128+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-08T01:23:16.148+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dag.create_folder scheduled__2025-08-07T00:00:00+00:00 [queued]>
+[2025-08-08T01:23:16.155+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dag.create_folder scheduled__2025-08-07T00:00:00+00:00 [queued]>
+[2025-08-08T01:23:16.155+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-08T01:23:16.164+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): create_folder> on 2025-08-07 00:00:00+00:00
+[2025-08-08T01:23:16.167+0000] {standard_task_runner.py:63} INFO - Started process 221 to run task
+[2025-08-08T01:23:16.170+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'first_dag', 'create_folder', 'scheduled__2025-08-07T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/firstdag.py', '--cfg-path', '/tmp/tmph15z3wd6']
+[2025-08-08T01:23:16.172+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask create_folder
+[2025-08-08T01:23:16.185+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.9/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-08-08T01:23:16.218+0000] {task_command.py:426} INFO - Running <TaskInstance: first_dag.create_folder scheduled__2025-08-07T00:00:00+00:00 [running]> on host 63b03a5bd235
+[2025-08-08T01:23:16.279+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='first_dag' AIRFLOW_CTX_TASK_ID='create_folder' AIRFLOW_CTX_EXECUTION_DATE='2025-08-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-07T00:00:00+00:00'
+[2025-08-08T01:23:16.280+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-08T01:23:16.299+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-08T01:23:16.300+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'mkdir -p "C:\\Users\\JOAO PC\\Documents\\lab\\***\\folder"']
+[2025-08-08T01:23:16.307+0000] {subprocess.py:86} INFO - Output:
+[2025-08-08T01:23:16.310+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-08T01:23:16.311+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-08T01:23:16.328+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=first_dag, task_id=create_folder, run_id=scheduled__2025-08-07T00:00:00+00:00, execution_date=20250807T000000, start_date=20250808T012316, end_date=20250808T012316
+[2025-08-08T01:23:16.342+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-08T01:23:16.353+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-08T01:23:16.354+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-08-08T01:31:04.879+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-08T01:31:04.899+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dag.create_folder scheduled__2025-08-07T00:00:00+00:00 [queued]>
+[2025-08-08T01:31:04.905+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dag.create_folder scheduled__2025-08-07T00:00:00+00:00 [queued]>
+[2025-08-08T01:31:04.906+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-08T01:31:04.914+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): create_folder> on 2025-08-07 00:00:00+00:00
+[2025-08-08T01:31:04.917+0000] {standard_task_runner.py:63} INFO - Started process 186 to run task
+[2025-08-08T01:31:04.919+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'first_dag', 'create_folder', 'scheduled__2025-08-07T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmpb2m0jzi9']
+[2025-08-08T01:31:04.921+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask create_folder
+[2025-08-08T01:31:04.933+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.9/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-08-08T01:31:04.967+0000] {task_command.py:426} INFO - Running <TaskInstance: first_dag.create_folder scheduled__2025-08-07T00:00:00+00:00 [running]> on host 63b03a5bd235
+[2025-08-08T01:31:05.019+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='first_dag' AIRFLOW_CTX_TASK_ID='create_folder' AIRFLOW_CTX_EXECUTION_DATE='2025-08-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-07T00:00:00+00:00'
+[2025-08-08T01:31:05.020+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-08T01:31:05.029+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-08T01:31:05.029+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'mkdir -p "C:\\Users\\JOAO PC\\Documents\\lab\\***\\pasta"']
+[2025-08-08T01:31:05.036+0000] {subprocess.py:86} INFO - Output:
+[2025-08-08T01:31:05.038+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-08T01:31:05.039+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-08T01:31:05.055+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=first_dag, task_id=create_folder, run_id=scheduled__2025-08-07T00:00:00+00:00, execution_date=20250807T000000, start_date=20250808T013104, end_date=20250808T013105
+[2025-08-08T01:31:05.091+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-08T01:31:05.101+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-08T01:31:05.103+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-08-08T02:01:23.188+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-08T02:01:23.208+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dag.create_folder scheduled__2025-08-07T00:00:00+00:00 [queued]>
+[2025-08-08T02:01:23.214+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dag.create_folder scheduled__2025-08-07T00:00:00+00:00 [queued]>
+[2025-08-08T02:01:23.214+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-08T02:01:23.223+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): create_folder> on 2025-08-07 00:00:00+00:00
+[2025-08-08T02:01:23.226+0000] {standard_task_runner.py:63} INFO - Started process 226 to run task
+[2025-08-08T02:01:23.229+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'first_dag', 'create_folder', 'scheduled__2025-08-07T00:00:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmp8o8fpaig']
+[2025-08-08T02:01:23.231+0000] {standard_task_runner.py:91} INFO - Job 27: Subtask create_folder
+[2025-08-08T02:01:23.243+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.9/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-08-08T02:01:23.278+0000] {task_command.py:426} INFO - Running <TaskInstance: first_dag.create_folder scheduled__2025-08-07T00:00:00+00:00 [running]> on host c79a68857a4c
+[2025-08-08T02:01:23.332+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='first_dag' AIRFLOW_CTX_TASK_ID='create_folder' AIRFLOW_CTX_EXECUTION_DATE='2025-08-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-07T00:00:00+00:00'
+[2025-08-08T02:01:23.332+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-08T02:01:23.341+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-08T02:01:23.342+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'mkdir -p /home/***/host_documents/pasta2025-08-08 00:00:00+00:00']
+[2025-08-08T02:01:23.349+0000] {subprocess.py:86} INFO - Output:
+[2025-08-08T02:01:23.352+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-08T02:01:23.353+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-08T02:01:23.368+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=first_dag, task_id=create_folder, run_id=scheduled__2025-08-07T00:00:00+00:00, execution_date=20250807T000000, start_date=20250808T020123, end_date=20250808T020123
+[2025-08-08T02:01:23.401+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-08T02:01:23.411+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-08T02:01:23.414+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

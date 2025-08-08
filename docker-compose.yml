@@ -48,6 +48,7 @@ services:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
+      - "C:/Users/JOAO PC/Documents/lab/airflow:/home/airflow/host_documents"
     ports:
       - "8089:8080"
     depends_on:
@@ -68,6 +69,7 @@ services:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
+      - "C:/Users/JOAO PC/Documents/lab/airflow:/home/airflow/host_documents"
     depends_on:
       - airflow-init
       - airflow-postgres
