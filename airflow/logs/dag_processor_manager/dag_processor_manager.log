@@ -1,0 +1,293 @@
+[2025-08-07T20:41:26.563+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-08-07T20:41:26.564+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-08-07T20:41:26.565+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-08-07T20:41:26.566+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T20:41:26.570+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-08-07T20:42:02.282+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-08-07T20:43:06.807+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-08-07T20:43:06.808+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-08-07T20:43:06.810+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-08-07T20:43:06.811+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T20:43:06.816+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-08-07T20:43:35.090+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-08-07T20:45:56.470+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-08-07T20:45:56.474+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-08-07T20:45:56.475+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-08-07T20:45:56.478+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T20:45:56.483+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-08-07T20:50:56.572+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T20:50:56.575+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-08-07T20:55:56.664+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T20:55:56.666+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-08-07T21:00:56.735+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T21:00:56.738+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-08-07T21:05:56.787+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T21:05:56.790+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-08-07T21:10:56.808+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T21:10:56.810+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-08-07T21:15:56.863+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T21:15:56.868+0000] {manager.py:740} INFO - There are 0 files in /opt/airflow/dags
+[2025-08-07T21:20:56.939+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T21:20:56.950+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-08-07T21:21:04.020+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.06s           2025-08-07T21:20:57
+================================================================================
+[2025-08-07T21:21:34.156+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:21:27
+================================================================================
+[2025-08-07T21:22:04.320+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:21:57
+================================================================================
+[2025-08-07T21:22:34.476+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:22:27
+================================================================================
+[2025-08-07T21:23:04.663+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:22:57
+================================================================================
+[2025-08-07T21:23:34.825+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:23:27
+================================================================================
+[2025-08-07T21:24:05.008+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:23:58
+================================================================================
+[2025-08-07T21:24:35.160+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:24:28
+================================================================================
+[2025-08-07T21:25:05.312+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:24:58
+================================================================================
+[2025-08-07T21:25:35.474+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:25:28
+================================================================================
+[2025-08-07T21:25:57.582+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T21:25:57.587+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-08-07T21:26:05.639+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:25:58
+================================================================================
+[2025-08-07T21:26:35.811+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:26:28
+================================================================================
+[2025-08-07T21:27:05.989+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:26:58
+================================================================================
+[2025-08-07T21:27:36.142+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:27:29
+================================================================================
+[2025-08-07T21:28:06.297+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:27:59
+================================================================================
+[2025-08-07T21:28:36.461+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.04s           2025-08-07T21:28:29
+================================================================================
+[2025-08-07T21:29:06.630+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.04s           2025-08-07T21:28:59
+================================================================================
+[2025-08-07T21:29:36.825+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.04s           2025-08-07T21:29:29
+================================================================================
+[2025-08-07T21:30:06.977+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.06s           2025-08-07T21:29:59
+================================================================================
+[2025-08-07T21:30:37.131+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:30:30
+================================================================================
+[2025-08-07T21:30:58.214+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T21:30:58.219+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-08-07T21:31:07.283+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:31:00
+================================================================================
+[2025-08-07T21:31:37.436+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:31:30
+================================================================================
+[2025-08-07T21:32:07.623+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:32:00
+================================================================================
+[2025-08-07T21:32:37.804+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:32:30
+================================================================================
+[2025-08-07T21:33:07.972+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:33:00
+================================================================================
+[2025-08-07T21:33:38.120+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:33:31
+================================================================================
+[2025-08-07T21:34:08.283+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.09s           2025-08-07T21:34:01
+================================================================================
+[2025-08-07T21:34:38.427+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:34:31
+================================================================================
+[2025-08-07T21:35:08.581+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:35:01
+================================================================================
+[2025-08-07T21:35:38.747+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:35:31
+================================================================================
+[2025-08-07T21:35:58.836+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-07T21:35:58.841+0000] {manager.py:740} INFO - There are 1 files in /opt/airflow/dags
+[2025-08-07T21:36:08.916+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:36:01
+================================================================================
+[2025-08-07T21:36:39.072+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                      PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/firstdag.py                           0           1  0.05s           2025-08-07T21:36:32
+================================================================================
