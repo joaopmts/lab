@@ -1,36 +1,36 @@
-## PRÉ-REQUISITOS
-#### Instalar o git e o Docker
-   * Instalação do Docker Desktop no Windows [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows) ou o docker no [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-   *  [Instalação do git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
+## PREREQUISITES
+#### Install Git and Docker
+   * Install Docker Desktop on Windows [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows) or Docker on [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+   * [Git Installation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-### Parar verificar os containers em execução
+### To check running containers
          docker ps 
 
-### Parar um containers
-         docker stop [nome do container]      
+### To stop a container
+         docker stop [container name]      
 
-### Parar todos containers
+### To stop all containers
          docker stop $(docker ps -a -q)
   
-### Remover um container
-         docker rm [nome do container]
+### To remove a container
+         docker rm [container name]
 
-### Remover todos containers
+### To remove all containers
          docker rm $(docker ps -a -q)         
 
-### Dados do containers
-         docker container inspect [nome do container]
+### Container details
+         docker container inspect [container name]
 
-### Iniciar um container específico
-         docker-compose up -d [nome do container]
+### Start a specific container
+         docker-compose up -d [container name]
 
-### Iniciar todos os containers (CUIDADO, é muito pesado)
+### Start all containers (CAUTION: very heavy)
          docker-compose up -d 
 
-### Acessar log do container
-         docker container logs [nome do container] 
+### Access container logs
+         docker container logs [container name] 
 
-## Acesso WebUI dos Frameworks
+## WebUI Access for Frameworks
  
 * Minio *http://localhost:9051*
 * Jupyter Spark *http://localhost:8889*
@@ -47,35 +47,35 @@
 * Airflow *http://localhost:8089*
 
 
-## Usuários e senhas
+## Users and Passwords
    ##### Airflow
-    Usuário: admin
-    Senha: admin
+    User: admin
+    Password: admin
 
    ##### Superset
-    Usuário: admin
-    Senha: admin
+    User: admin
+    Password: admin
 
    ##### Metabase
-    Usuário: admin@mds.com
-    Senha: admin 
+    User: admin@mds.com
+    Password: admin 
 
    ##### Postgres
-    Usuário: admin
-    Senha: admin
+    User: admin
+    Password: admin
    
    ##### Minio
-    Usuário: admin
-    Senha: minioadmin
+    User: admin
+    Password: minioadmin
        
    ##### Pinot
-    Usuário: admin
-    Senha: admin
+    User: admin
+    Password: admin
         
    ##### Kibana
-    Usuário: admin
-    Senha: admin
+    User: admin
+    Password: admin
         
    ##### Hue
-    Usuário: admin
-    Senha: admin
+    User: admin
+    Password: admin
