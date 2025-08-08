@@ -334,3 +334,10 @@ IndentationError: unexpected indent
 [2025-08-08T02:02:57.064+0000] {logging_mixin.py:188} INFO - [2025-08-08T02:02:57.064+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-08-08T02:02:57.080+0000] {logging_mixin.py:188} INFO - [2025-08-08T02:02:57.080+0000] {dag.py:3954} INFO - Setting next_dagrun for desafio to 2025-08-07 00:00:00+00:00, run_after=2025-08-08 00:00:00+00:00
 [2025-08-08T02:02:57.092+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/desafio.py took 0.076 seconds
+[2025-08-08T02:03:27.274+0000] {processor.py:161} INFO - Started process (PID=270) to work on /opt/airflow/dags/desafio.py
+[2025-08-08T02:03:27.275+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/desafio.py for tasks to queue
+[2025-08-08T02:03:27.276+0000] {logging_mixin.py:188} INFO - [2025-08-08T02:03:27.276+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/desafio.py
+[2025-08-08T02:03:27.292+0000] {processor.py:840} INFO - DAG(s) 'desafio' retrieved from /opt/airflow/dags/desafio.py
+[2025-08-08T02:03:27.310+0000] {logging_mixin.py:188} INFO - [2025-08-08T02:03:27.310+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-08T02:03:27.326+0000] {logging_mixin.py:188} INFO - [2025-08-08T02:03:27.325+0000] {dag.py:3954} INFO - Setting next_dagrun for desafio to 2025-08-07 00:00:00+00:00, run_after=2025-08-08 00:00:00+00:00
+[2025-08-08T02:03:27.338+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/desafio.py took 0.069 seconds
