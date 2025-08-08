@@ -1158,3 +1158,1085 @@ File Path                         PID  Runtime      # DAGs    # Errors  Last Run
 /opt/airflow/dags/desafio.py      270  0.00s             1           0  0.09s           2025-08-08T02:02:57
 ================================================================================
 [2025-08-08T02:03:47.847+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-08-08T02:25:40.418+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-08-08T02:25:40.420+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-08-08T02:25:40.422+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-08-08T02:25:40.425+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T02:25:40.490+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T02:25:40.644+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/climate_data.py    181  0.08s             0           0
+/opt/airflow/dags/desafio.py                                0           0
+/opt/airflow/dags/first_dag.py       184  0.06s             0           0
+================================================================================
+[2025-08-08T02:26:11.408+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  1.78s           2025-08-08T02:25:42
+/opt/airflow/dags/first_dag.py       197  0.00s             1           0  0.61s           2025-08-08T02:25:41
+/opt/airflow/dags/desafio.py                                1           0  0.36s           2025-08-08T02:25:41
+================================================================================
+[2025-08-08T02:26:41.688+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.33s           2025-08-08T02:26:12
+/opt/airflow/dags/first_dag.py       517  0.00s             1           0  0.10s           2025-08-08T02:26:11
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:26:12
+================================================================================
+[2025-08-08T02:27:11.947+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.29s           2025-08-08T02:26:43
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:26:42
+/opt/airflow/dags/first_dag.py       845  0.00s             1           0  0.09s           2025-08-08T02:26:41
+================================================================================
+[2025-08-08T02:27:42.221+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.30s           2025-08-08T02:27:14
+/opt/airflow/dags/first_dag.py       861  0.00s             1           0  0.10s           2025-08-08T02:27:12
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:27:13
+================================================================================
+[2025-08-08T02:28:12.499+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:27:45
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:27:43
+/opt/airflow/dags/first_dag.py       877  0.00s             1           0  0.09s           2025-08-08T02:27:42
+================================================================================
+[2025-08-08T02:28:42.761+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T02:28:15
+/opt/airflow/dags/first_dag.py       893  0.00s             1           0  0.10s           2025-08-08T02:28:12
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:28:13
+================================================================================
+[2025-08-08T02:29:13.010+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:28:47
+/opt/airflow/dags/first_dag.py       909  0.00s             1           0  0.09s           2025-08-08T02:28:42
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:28:43
+================================================================================
+[2025-08-08T02:29:43.302+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:29:17
+/opt/airflow/dags/desafio.py                                1           0  0.11s           2025-08-08T02:29:14
+/opt/airflow/dags/first_dag.py       925  0.00s             1           0  0.09s           2025-08-08T02:29:13
+================================================================================
+[2025-08-08T02:30:13.580+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:29:47
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:29:44
+/opt/airflow/dags/first_dag.py       941  0.00s             1           0  0.09s           2025-08-08T02:29:43
+================================================================================
+[2025-08-08T02:30:40.823+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T02:30:40.844+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T02:30:43.877+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.29s           2025-08-08T02:30:18
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:30:14
+/opt/airflow/dags/first_dag.py       957  0.00s             1           0  0.09s           2025-08-08T02:30:13
+================================================================================
+[2025-08-08T02:31:14.142+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.28s           2025-08-08T02:30:49
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:30:44
+/opt/airflow/dags/first_dag.py       973  0.00s             1           0  0.09s           2025-08-08T02:30:43
+================================================================================
+[2025-08-08T02:31:16.279+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-08-08T02:32:52.080+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-08-08T02:32:52.081+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-08-08T02:32:52.082+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-08-08T02:32:52.084+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T02:32:52.142+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T02:32:52.442+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/climate_data.py    180  0.14s             0           0
+/opt/airflow/dags/desafio.py                                0           0
+/opt/airflow/dags/first_dag.py       183  0.08s             0           0
+================================================================================
+[2025-08-08T02:33:22.493+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  2.01s           2025-08-08T02:32:54
+/opt/airflow/dags/first_dag.py                              1           0  0.29s           2025-08-08T02:32:52
+/opt/airflow/dags/desafio.py                                1           0  0.26s           2025-08-08T02:32:52
+================================================================================
+[2025-08-08T02:33:52.763+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.30s           2025-08-08T02:33:24
+/opt/airflow/dags/first_dag.py                              1           0  0.22s           2025-08-08T02:33:23
+/opt/airflow/dags/desafio.py                                1           0  0.21s           2025-08-08T02:33:23
+================================================================================
+[2025-08-08T02:34:22.961+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.33s           2025-08-08T02:33:55
+/opt/airflow/dags/first_dag.py                              1           0  0.11s           2025-08-08T02:33:53
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:33:53
+================================================================================
+[2025-08-08T02:34:53.011+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.30s           2025-08-08T02:34:26
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:34:23
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:34:23
+================================================================================
+[2025-08-08T02:35:23.269+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:34:57
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:34:54
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:34:54
+================================================================================
+[2025-08-08T02:35:53.534+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.29s           2025-08-08T02:35:27
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:35:24
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:35:24
+================================================================================
+[2025-08-08T02:36:23.817+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.28s           2025-08-08T02:35:58
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:35:54
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:35:54
+================================================================================
+[2025-08-08T02:36:54.077+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:36:30
+/opt/airflow/dags/first_dag.py                              1           0  0.11s           2025-08-08T02:36:24
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:36:24
+================================================================================
+[2025-08-08T02:37:24.403+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:37:00
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:36:55
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:36:55
+================================================================================
+[2025-08-08T02:37:52.661+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T02:37:52.688+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T02:37:54.710+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.29s           2025-08-08T02:37:30
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:37:25
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:37:25
+================================================================================
+[2025-08-08T02:38:24.990+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.28s           2025-08-08T02:38:01
+/opt/airflow/dags/first_dag.py                              1           0  0.11s           2025-08-08T02:37:55
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:37:55
+================================================================================
+[2025-08-08T02:38:55.726+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.37s           2025-08-08T02:38:35
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:38:26
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:38:26
+================================================================================
+[2025-08-08T02:39:26.203+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.34s           2025-08-08T02:39:06
+/opt/airflow/dags/first_dag.py                              1           0  0.16s           2025-08-08T02:38:56
+/opt/airflow/dags/desafio.py                                1           0  0.15s           2025-08-08T02:38:56
+================================================================================
+[2025-08-08T02:39:56.469+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.35s           2025-08-08T02:39:36
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:39:27
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:39:27
+================================================================================
+[2025-08-08T02:40:26.723+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T02:40:07
+/opt/airflow/dags/first_dag.py                              1           0  0.11s           2025-08-08T02:39:57
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:39:57
+================================================================================
+[2025-08-08T02:40:56.994+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:40:38
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:40:27
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:40:27
+================================================================================
+[2025-08-08T02:41:27.409+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.31s           2025-08-08T02:41:25
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:40:58
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:40:58
+================================================================================
+[2025-08-08T02:41:57.634+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.32s           2025-08-08T02:41:55
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T02:41:28
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:41:28
+================================================================================
+[2025-08-08T02:42:27.868+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T02:42:27
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:41:58
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:41:58
+================================================================================
+[2025-08-08T02:42:53.171+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T02:42:53.200+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T02:42:58.254+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T02:42:57
+/opt/airflow/dags/first_dag.py                              1           0  0.14s           2025-08-08T02:42:29
+/opt/airflow/dags/desafio.py                                1           0  0.14s           2025-08-08T02:42:29
+================================================================================
+[2025-08-08T02:43:28.547+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T02:43:27
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:42:59
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:42:59
+================================================================================
+[2025-08-08T02:43:58.820+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T02:43:58
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:43:29
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:43:29
+================================================================================
+[2025-08-08T02:44:29.116+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T02:44:28
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:43:59
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:43:59
+================================================================================
+[2025-08-08T02:44:59.317+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py   3356  0.00s             1           0  0.26s           2025-08-08T02:44:28
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:44:30
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:44:30
+================================================================================
+[2025-08-08T02:45:29.546+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:44:59
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:45:00
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:45:00
+================================================================================
+[2025-08-08T02:45:59.833+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:45:29
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T02:45:30
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:45:30
+================================================================================
+[2025-08-08T02:46:30.226+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:46:01
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:46:01
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:46:00
+================================================================================
+[2025-08-08T02:47:00.615+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:46:31
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:46:31
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:46:31
+================================================================================
+[2025-08-08T02:47:30.997+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:47:01
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:47:01
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:47:01
+================================================================================
+[2025-08-08T02:47:53.384+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T02:47:53.404+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T02:48:01.452+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.33s           2025-08-08T02:47:52
+/opt/airflow/dags/first_dag.py                              1           0  0.11s           2025-08-08T02:47:32
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:47:32
+================================================================================
+[2025-08-08T02:48:31.702+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.41s           2025-08-08T02:48:24
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:48:02
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:48:02
+================================================================================
+[2025-08-08T02:49:01.950+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T02:48:55
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:48:32
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:48:32
+================================================================================
+[2025-08-08T02:49:32.208+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.28s           2025-08-08T02:49:25
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:49:03
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:49:03
+================================================================================
+[2025-08-08T02:50:02.432+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T02:49:56
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:49:33
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:49:33
+================================================================================
+[2025-08-08T02:50:32.717+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:50:26
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:50:03
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:50:03
+================================================================================
+[2025-08-08T02:51:03.019+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:50:57
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:50:33
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:50:33
+================================================================================
+[2025-08-08T02:51:33.306+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.29s           2025-08-08T02:51:27
+/opt/airflow/dags/first_dag.py                              1           0  0.11s           2025-08-08T02:51:04
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:51:04
+================================================================================
+[2025-08-08T02:52:03.638+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.33s           2025-08-08T02:51:57
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:51:34
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:51:34
+================================================================================
+[2025-08-08T02:52:33.954+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py   3644  0.00s             1           0  0.27s           2025-08-08T02:52:29
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:52:04
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:52:04
+================================================================================
+[2025-08-08T02:52:54.343+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T02:52:54.379+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T02:53:04.473+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py   3660  0.00s             1           0  0.29s           2025-08-08T02:52:34
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:52:35
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:52:35
+================================================================================
+[2025-08-08T02:53:34.662+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.30s           2025-08-08T02:53:04
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T02:53:05
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:53:05
+================================================================================
+[2025-08-08T02:54:05.082+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.29s           2025-08-08T02:53:56
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:53:35
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:53:35
+================================================================================
+[2025-08-08T02:54:35.344+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.33s           2025-08-08T02:54:26
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T02:54:06
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:54:06
+================================================================================
+[2025-08-08T02:55:05.579+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T02:54:57
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T02:54:36
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:54:36
+================================================================================
+[2025-08-08T02:55:35.826+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T02:55:27
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:55:06
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:55:06
+================================================================================
+[2025-08-08T02:56:06.336+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.31s           2025-08-08T02:56:04
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T02:55:36
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:55:36
+================================================================================
+[2025-08-08T02:56:36.558+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.40s           2025-08-08T02:56:34
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:56:07
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:56:07
+================================================================================
+[2025-08-08T02:57:06.800+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.32s           2025-08-08T02:57:06
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:56:37
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:56:37
+================================================================================
+[2025-08-08T02:57:36.982+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py   3894  0.00s             1           0  0.32s           2025-08-08T02:57:06
+/opt/airflow/dags/first_dag.py                              1           0  0.11s           2025-08-08T02:57:07
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T02:57:07
+================================================================================
+[2025-08-08T02:57:55.149+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T02:57:55.183+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T02:58:07.289+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py   3910  0.00s             1           0  0.26s           2025-08-08T02:57:37
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:57:38
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T02:57:38
+================================================================================
+[2025-08-08T02:58:37.487+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.29s           2025-08-08T02:58:07
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:58:08
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:58:08
+================================================================================
+[2025-08-08T02:59:07.875+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T02:58:38
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:58:38
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:58:38
+================================================================================
+[2025-08-08T02:59:38.298+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T02:59:09
+/opt/airflow/dags/desafio.py                                1           0  0.13s           2025-08-08T02:59:09
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T02:59:08
+================================================================================
+[2025-08-08T03:00:08.683+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T02:59:39
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T02:59:39
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T02:59:39
+================================================================================
+[2025-08-08T03:00:39.077+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T03:00:09
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:00:09
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:00:09
+================================================================================
+[2025-08-08T03:01:09.437+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T03:00:40
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:00:40
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:00:40
+================================================================================
+[2025-08-08T03:01:39.821+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:01:10
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:01:10
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:01:10
+================================================================================
+[2025-08-08T03:02:10.264+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:01:41
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:01:41
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:01:40
+================================================================================
+[2025-08-08T03:02:40.687+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.28s           2025-08-08T03:02:11
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:02:11
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:02:11
+================================================================================
+[2025-08-08T03:02:55.973+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T03:02:56.002+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T03:03:11.097+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:02:41
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T03:02:41
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:02:41
+================================================================================
+[2025-08-08T03:03:41.452+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T03:03:12
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:03:12
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:03:12
+================================================================================
+[2025-08-08T03:04:11.805+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:03:42
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:03:42
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:03:42
+================================================================================
+[2025-08-08T03:04:42.178+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:04:13
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:04:12
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:04:12
+================================================================================
+[2025-08-08T03:05:12.559+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:04:43
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:04:43
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:04:43
+================================================================================
+[2025-08-08T03:05:42.949+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:05:13
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:05:13
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:05:13
+================================================================================
+[2025-08-08T03:06:13.316+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:05:44
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:05:44
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:05:44
+================================================================================
+[2025-08-08T03:06:43.751+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.30s           2025-08-08T03:06:32
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:06:14
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:06:14
+================================================================================
+[2025-08-08T03:07:14.007+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.40s           2025-08-08T03:07:03
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:06:44
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:06:44
+================================================================================
+[2025-08-08T03:07:44.265+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T03:07:34
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T03:07:15
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:07:15
+================================================================================
+[2025-08-08T03:07:56.343+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T03:07:56.363+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T03:08:14.513+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:08:04
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:07:45
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:07:45
+================================================================================
+[2025-08-08T03:08:44.773+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T03:08:34
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T03:08:15
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:08:15
+================================================================================
+[2025-08-08T03:09:15.048+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.28s           2025-08-08T03:08:55
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:08:45
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:08:45
+================================================================================
+[2025-08-08T03:09:45.331+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.39s           2025-08-08T03:09:25
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T03:09:16
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:09:16
+================================================================================
+[2025-08-08T03:10:15.582+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:09:56
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:09:46
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:09:46
+================================================================================
+[2025-08-08T03:10:45.847+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:10:27
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T03:10:16
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:10:16
+================================================================================
+[2025-08-08T03:11:16.125+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T03:10:57
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T03:10:46
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:10:46
+================================================================================
+[2025-08-08T03:11:46.377+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T03:11:27
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:11:17
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:11:17
+================================================================================
+[2025-08-08T03:12:16.664+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.25s           2025-08-08T03:11:57
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T03:11:47
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:11:47
+================================================================================
+[2025-08-08T03:12:46.942+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:12:28
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:12:17
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:12:17
+================================================================================
+[2025-08-08T03:12:57.007+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T03:12:57.038+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T03:13:17.213+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:12:59
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:12:48
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:12:48
+================================================================================
+[2025-08-08T03:13:47.487+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:13:29
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:13:18
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:13:18
+================================================================================
+[2025-08-08T03:14:17.755+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:13:59
+/opt/airflow/dags/first_dag.py                              1           0  0.11s           2025-08-08T03:13:48
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:13:48
+================================================================================
+[2025-08-08T03:14:48.051+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:14:30
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:14:18
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:14:18
+================================================================================
+[2025-08-08T03:15:18.323+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:15:00
+/opt/airflow/dags/desafio.py                                1           0  0.10s           2025-08-08T03:14:49
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:14:49
+================================================================================
+[2025-08-08T03:15:48.581+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:15:31
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:15:19
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:15:19
+================================================================================
+[2025-08-08T03:16:18.859+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:16:02
+/opt/airflow/dags/first_dag.py                              1           0  0.11s           2025-08-08T03:15:49
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:15:49
+================================================================================
+[2025-08-08T03:16:49.120+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:16:32
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:16:19
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:16:19
+================================================================================
+[2025-08-08T03:17:19.387+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:17:03
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T03:16:50
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:16:50
+================================================================================
+[2025-08-08T03:17:49.642+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.27s           2025-08-08T03:17:33
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:17:20
+/opt/airflow/dags/first_dag.py                              1           0  0.09s           2025-08-08T03:17:20
+================================================================================
+[2025-08-08T03:17:57.695+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-08T03:17:57.714+0000] {manager.py:740} INFO - There are 3 files in /opt/airflow/dags
+[2025-08-08T03:18:19.937+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:18:04
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T03:17:50
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:17:50
+================================================================================
+[2025-08-08T03:18:50.199+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.26s           2025-08-08T03:18:34
+/opt/airflow/dags/first_dag.py                              1           0  0.10s           2025-08-08T03:18:21
+/opt/airflow/dags/desafio.py                                1           0  0.09s           2025-08-08T03:18:21
+================================================================================
+[2025-08-08T03:19:20.436+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/climate_data.py                           1           0  0.28s           2025-08-08T03:19:05
+/opt/airflow/dags/first_dag.py                              1           0  0.08s           2025-08-08T03:18:51
+/opt/airflow/dags/desafio.py                                1           0  0.08s           2025-08-08T03:18:51
+================================================================================
+[2025-08-08T03:19:33.871+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15

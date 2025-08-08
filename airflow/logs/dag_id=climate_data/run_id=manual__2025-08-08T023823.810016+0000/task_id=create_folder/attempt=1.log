@@ -1,0 +1,34 @@
+[2025-08-08T02:38:24.520+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-08T02:38:24.538+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: climate_data.create_folder manual__2025-08-08T02:38:23.810016+00:00 [queued]>
+[2025-08-08T02:38:24.544+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: climate_data.create_folder manual__2025-08-08T02:38:23.810016+00:00 [queued]>
+[2025-08-08T02:38:24.545+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-08T02:38:24.553+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): create_folder> on 2025-08-08 02:38:23.810016+00:00
+[2025-08-08T02:38:24.556+0000] {standard_task_runner.py:63} INFO - Started process 978 to run task
+[2025-08-08T02:38:24.559+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'climate_data', 'create_folder', 'manual__2025-08-08T02:38:23.810016+00:00', '--job-id', '339', '--raw', '--subdir', 'DAGS_FOLDER/climate_data.py', '--cfg-path', '/tmp/tmp4hl60dbp']
+[2025-08-08T02:38:24.561+0000] {standard_task_runner.py:91} INFO - Job 339: Subtask create_folder
+[2025-08-08T02:38:24.573+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.9/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-08-08T02:38:24.610+0000] {task_command.py:426} INFO - Running <TaskInstance: climate_data.create_folder manual__2025-08-08T02:38:23.810016+00:00 [running]> on host 1a6f5acf67f4
+[2025-08-08T02:38:24.667+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='climate_data' AIRFLOW_CTX_TASK_ID='create_folder' AIRFLOW_CTX_EXECUTION_DATE='2025-08-08T02:38:23.810016+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-08T02:38:23.810016+00:00'
+[2025-08-08T02:38:24.668+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-08T02:38:24.675+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-08T02:38:24.676+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'mkdir -p /home/***/host_documents/week2025-08-04"']
+[2025-08-08T02:38:24.683+0000] {subprocess.py:86} INFO - Output:
+[2025-08-08T02:38:24.684+0000] {subprocess.py:93} INFO - /usr/bin/bash: -c: line 1: unexpected EOF while looking for matching `"'
+[2025-08-08T02:38:24.684+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-08-08T02:38:24.684+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-08T02:38:24.691+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-08-08T02:38:24.693+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=climate_data, task_id=create_folder, run_id=manual__2025-08-08T02:38:23.810016+00:00, execution_date=20250808T023823, start_date=20250808T023824, end_date=20250808T023824
+[2025-08-08T02:38:24.700+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 339 for task create_folder (Bash command failed. The command returned a non-zero exit code 2.; 978)
+[2025-08-08T02:38:24.731+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-08T02:38:24.746+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-08T02:38:24.749+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
