@@ -9,7 +9,7 @@ pw reddit api secret
 Extra Fields JSON
 {
   "client_id": "RRdifwlscWCwv2QR8dFrzA",
-  "client_secret": "***",
+  "client_secret": "L5wi16mrNGDTmHJGlLu-ZyqaGS8dSA",
   "user_agent": "airflow:reddit_etl:v1.0 (by u/joaopmts)",
   "redirect_uri": "http://localhost:8080"
 }

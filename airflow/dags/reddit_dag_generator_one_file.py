@@ -24,7 +24,7 @@ with DAG(
     task1 = RedditOperator(
         task_id="reddit_search",
         query="bf6",      
-        time_filter='year' 
+        time_filter='day' 
     )
 
     task2 = PythonOperator(

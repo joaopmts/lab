@@ -24,7 +24,6 @@ x-airflow-common:
     - ./airflow/config:/opt/airflow/config
     - ./airflow/plugins:/opt/airflow/plugins
     - ./airflow/data:/opt/airflow/data
-    - ./airflow/conf/jars:/opt/airflow/conf/jars
     - ./scripts:/scripts
   user: "${AIRFLOW_UID:-50000}:0"
   networks:

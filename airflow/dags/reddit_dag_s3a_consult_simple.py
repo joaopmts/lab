@@ -11,8 +11,6 @@ minio_conf = {
     "spark.hadoop.fs.s3a.connection.ssl.enabled": "false",
 }
 
-
-
 jar_home="/opt/airflow/conf/jars"
 driver_class_path=f'{jar_home}/hadoop-aws-3.3.4.jar,{jar_home}/aws-java-sdk-bundle-1.12.262.jar'
 

@@ -7,7 +7,7 @@ if __name__ == "__main__":
     )
 
     df_hdfs = spark.read.csv(
-        path="hdfs://namenode:8020/bronze/reddit",
+        path="hdfs://namenode:8020/teste/reddit",
         header=True
     )
 

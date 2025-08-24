@@ -11,7 +11,7 @@ if __name__ == "__main__":
     .master("spark://spark-master:7077").getOrCreate()
 
     df_hdfs = spark.read.csv(
-        path="s3a://bronze/reddit",
+        path="s3a://teste/reddit",
         header=True
     )
 
