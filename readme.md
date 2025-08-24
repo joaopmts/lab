@@ -25,10 +25,6 @@ Before setting up the environment, install:
   - [Docker Desktop (Windows)](https://hub.docker.com/editions/community/docker-ce-desktop-windows)  
   - [Docker Engine (Linux)](https://docs.docker.com/install/linux/docker-ce/ubuntu/)  
 
-Please download these jars on /airflow/conf/jars - I'm working to implement in the Airflow Dockerfile
-  - [Hadoop AWS 3.3.4](https://central.sonatype.com/artifact/org.apache.hadoop/hadoop-aws/3.3.4)
-  - [AWS Java SDK Bundle 1.12.262](https://central.sonatype.com/artifact/com.amazonaws/aws-java-sdk-bundle/1.12.262)
----
 
 ## Clean Installation
 
