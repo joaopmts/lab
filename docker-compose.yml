@@ -16,9 +16,7 @@ x-airflow-common:
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
     AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
-    PYTHONPATH: "/opt/airflow/plugins:/opt/airflow/dags"
   volumes:
     - ./airflow/dags:/opt/airflow/dags
     - ./airflow/logs:/opt/airflow/logs
@@ -61,6 +59,8 @@ services:
     environment:
       - SPARK_MODE=master
       - HADOOP_CONF_DIR=/opt/bitnami/spark/conf
+      - AWS_ACCESS_KEY_ID=${S3AACESS}
+      - AWS_SECRET_ACCESS_KEY=${S3ASECRET}
     ports:
       - 8180:8080
       - 7077:7077
@@ -89,6 +89,8 @@ services:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark-master:7077
       - HADOOP_CONF_DIR=/opt/bitnami/spark/conf
+      - AWS_ACCESS_KEY_ID=${S3AACESS}
+      - AWS_SECRET_ACCESS_KEY=${S3ASECRET}
     ports:
       - 8881:8081
     volumes:

@@ -1,0 +1,12 @@
+{"timestamp":"2025-08-24T10:04:02.242648","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-08-24T10:04:02.243070","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_bronze.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-08-24T10:04:02.526817","level":"warning","event":"/home/airflow/.local/lib/python3.12/site-packages/airflow/models/connection.py:471: DeprecationWarning: Using Connection.get_connection_from_secrets from `airflow.models` is deprecated.Please use `from airflow.sdk import Connection` instead\n  warnings.warn(\n","logger":"py.warnings"}
+{"timestamp":"2025-08-24T10:04:02.535847","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-08-24T10:04:03.696666Z","level":"error","event":"25/08/24 10:04:03 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable","chan":"stderr","logger":"task"}
+{"timestamp":"2025-08-24T10:04:03.807259Z","level":"error","event":"Setting default log level to \"WARN\".","chan":"stderr","logger":"task"}
+{"timestamp":"2025-08-24T10:04:03.807634Z","level":"error","event":"To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).","chan":"stderr","logger":"task"}
+{"timestamp":"2025-08-24T10:04:04.355393Z","level":"error","event":"25/08/24 10:04:04 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-08-24T10:04:05.930330Z","level":"error","event":"25/08/24 10:04:05 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties","chan":"stderr","logger":"task"}
+{"timestamp":"2025-08-24T10:04:06.606795Z","level":"error","event":"25/08/24 10:04:06 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-08-24T10:04:12.209675","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-08-24T10:04:12.576712Z","level":"error","event":"\r[Stage 0:>                                                          (0 + 0) / 2]\r\r[Stage 0:>                                                          (0 + 2) / 2]","chan":"stderr","logger":"task"}

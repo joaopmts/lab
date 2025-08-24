@@ -1,7 +1,7 @@
 from hook.spark_hook import sparkhook
 
 def meu_job():
-    spark = sparkhook(appname="MeuApp").get_conn()
+    spark = sparkhook(appname="test").get_conn()
 
     df_hdfs = spark.read.csv(
         path="s3a://teste/reddit",

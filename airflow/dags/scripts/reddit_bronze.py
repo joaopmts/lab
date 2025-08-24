@@ -49,7 +49,7 @@ def to_df(data, spark):
     return posts
 
 def write(path, file_format, source_task_id, **kwargs):
-    spark = sparkhook(appname="MeuApp").get_conn()
+    spark = sparkhook(appname="RedditBronze").get_conn()
     ctx = recievedata()
     data = ctx["ti"].xcom_pull(task_ids=source_task_id)
     post = to_df(data, spark)

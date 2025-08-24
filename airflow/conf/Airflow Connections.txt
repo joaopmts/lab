@@ -26,19 +26,13 @@ Extra Fields JSON
   "spark-binary": "spark-submit",
   "namespace": null,
   "principal": null,
-  "keytab": null
+  "keytab": null,
+  "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem",
+  "spark.hadoop.fs.s3a.endpoint": "http://minio:9000",
+  "spark.hadoop.fs.s3a.access.key": "eDFFCzvdNdoeLlJkZhXI",
+  "spark.hadoop.fs.s3a.secret.key": "gU3PQYFs6K60DvP5ut52zMQJAU3M3rW4XtCY9lqb",
+  "spark.hadoop.fs.s3a.path.style.access": "true",
+  "spark.hadoop.fs.s3a.connection.ssl.enabled": "false",
+  "driver_class_path": "/opt/airflow/conf/jars/hadoop-aws-3.3.4.jar,/opt/airflow/conf/jars/aws-java-sdk-bundle-1.12.262.jar"
 }
 
-s3a Connection
-id s3a_default
-Conn Type Generic
-host minio
-login eDFFCzvdNdoeLlJkZhXI
-pw gU3PQYFs6K60DvP5ut52zMQJAU3M3rW4XtCY9lqb
-port 9000
-Extra Fields JSON
-{
-  "jar_home": "/opt/airflow/conf/jars",
-  "hadoop_aws": "3.3.4",
-  "aws_sdk_bundle": "1.12.262"
-}
