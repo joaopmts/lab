@@ -5,12 +5,11 @@ It includes orchestration services, distributed processing, data storage, and gr
 
 ---
 
-## `docs` Folder  
+## Media Folder  
 
 The **`docs`** folder contains visual documentation materials for the project, such as images, diagrams, and screenshots.  
 These files are used to enrich the explanations in the `README.md`.  
-
-### Suggested structure  
+ 
 - [docs/images](https://github.com/joaopmts/lab/tree/main/docs/images) → screenshots from running applications shown in the `README.md`  
 
 > Note: Files in this folder are strictly for documentation purposes.  
