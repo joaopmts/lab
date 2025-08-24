@@ -16,7 +16,7 @@ with DAG(
 
     spark_job_currency = SparkSubmitOperator(
     task_id="s3a_consult_hook",
-    application="/opt/airflow/dags/scripts/read_s3a.py",
+    application="/opt/airflow/dags/scripts/read_s3a_teste.py",
     name="s3a_consult",
     conn_id="spark_default",
     conf=confhook,
