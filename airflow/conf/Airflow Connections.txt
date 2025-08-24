@@ -1,0 +1,44 @@
+Airflow Connections
+
+Reddit Connection
+id   reddit_default
+Conn Type HTTP
+host https://www.reddit.com
+login reddit api login
+pw reddit api secret
+Extra Fields JSON
+{
+  "client_id": "RRdifwlscWCwv2QR8dFrzA",
+  "client_secret": "***",
+  "user_agent": "airflow:reddit_etl:v1.0 (by u/joaopmts)",
+  "redirect_uri": "http://localhost:8080"
+}
+
+Spark Connection
+id   spark_default
+Conn Type Spark
+host spark://spark-master
+port 7077
+Extra Fields JSON
+{
+  "queue": null,
+  "deploy-mode": "client",
+  "spark-binary": "spark-submit",
+  "namespace": null,
+  "principal": null,
+  "keytab": null
+}
+
+s3a Connection
+id s3a_default
+Conn Type Generic
+host minio
+login eDFFCzvdNdoeLlJkZhXI
+pw gU3PQYFs6K60DvP5ut52zMQJAU3M3rW4XtCY9lqb
+port 9000
+Extra Fields JSON
+{
+  "jar_home": "/opt/airflow/conf/jars",
+  "hadoop_aws": "3.3.4",
+  "aws_sdk_bundle": "1.12.262"
+}
