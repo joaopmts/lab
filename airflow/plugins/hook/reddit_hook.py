@@ -21,6 +21,16 @@ class RedditHook(BaseHook):
             )
         return reddit
     
+    def get_cli(self):
+        conn = self.get_connection(self.conn_id)
+        extra = conn.extra_dejson
+
+        client_id = extra.get("client_id")
+        client_secret = extra.get("client_secret")
+        user_agent = extra.get("user_agent")
+
+        return client_id, client_secret, user_agent
+    
     def reddit_search(self, query, subreddit, sort, time_filter, limit):
         reddit = self.get_conn()
         results = reddit.subreddit(subreddit).search(
