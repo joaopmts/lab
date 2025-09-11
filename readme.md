@@ -22,9 +22,13 @@ Before setting up the environment, install:
 - **Git** → [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
 - **Docker**  
   - [Docker Desktop (Windows)](https://hub.docker.com/editions/community/docker-ce-desktop-windows)  
-  - [Docker Engine (Linux)](https://docs.docker.com/install/linux/docker-ce/ubuntu/)  
+  - [Docker Engine (Linux)](https://docs.docker.com/install/linux/docker-ce/ubuntu/) 
 
+## Prerequisites
 
+Databases:  
+
+- **Drive** → [Install Git](https://drive.google.com/drive/folders/1irErR_dXx2XzpMRyNKWbqAF7NNMKDAkh?usp=drive_link)
 ## Clean Installation
 
 ```powershell
