@@ -1,0 +1,38 @@
+Airflow Connections
+
+Reddit Connection
+id   reddit_default
+Conn Type HTTP
+host https://www.reddit.com
+login reddit api login
+pw reddit api secret
+Extra Fields JSON
+{
+  "client_id": "RRdifwlscWCwv2QR8dFrzA",
+  "client_secret": "L5wi16mrNGDTmHJGlLu-ZyqaGS8dSA",
+  "user_agent": "airflow:reddit_etl:v1.0 (by u/joaopmts)",
+  "redirect_uri": "http://localhost:8080"
+}
+
+Spark Connection
+id   spark_default
+Conn Type Spark
+host spark://spark-master
+port 7077
+Extra Fields JSON
+{
+  "queue": null,
+  "deploy-mode": "client",
+  "spark-binary": "spark-submit",
+  "namespace": null,
+  "principal": null,
+  "keytab": null,
+  "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem",
+  "spark.hadoop.fs.s3a.endpoint": "http://minio:9000",
+  "spark.hadoop.fs.s3a.access.key": "eDFFCzvdNdoeLlJkZhXI",
+  "spark.hadoop.fs.s3a.secret.key": "gU3PQYFs6K60DvP5ut52zMQJAU3M3rW4XtCY9lqb",
+  "spark.hadoop.fs.s3a.path.style.access": "true",
+  "spark.hadoop.fs.s3a.connection.ssl.enabled": "false",
+  "driver_class_path": "/opt/airflow/conf/jars/hadoop-aws-3.3.4.jar,/opt/airflow/conf/jars/aws-java-sdk-bundle-1.12.262.jar"
+}
+
