@@ -36,3 +36,11 @@ Extra Fields JSON
   "driver_class_path": "/opt/airflow/conf/jars/hadoop-aws-3.3.4.jar,/opt/airflow/conf/jars/aws-java-sdk-bundle-1.12.262.jar"
 }
 
+Spotify Connection
+
+id   spotify_default
+Conn Type HTTP
+host https://accounts.spotify.com
+login spofity api login
+pw spofity api secret
+
