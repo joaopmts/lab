@@ -13,7 +13,7 @@ input_format = "csv"
 temp = f"s3a://temp/spotify"
 
 with DAG(
-    dag_id="spotify_database_enrichment",
+    dag_id="kaggle_spotify_pipeline",
     start_date=datetime(2025, 1, 1),
     schedule=None,
     catchup=False,
@@ -27,7 +27,7 @@ with DAG(
     client_id, client_secret, host = s.get_spotify_auth()
 
     task1 = SparkSubmitOperator(
-        task_id="spotify_manipulation",
+        task_id="bronze_spotify_manipulation",
         application="/opt/airflow/dags/scripts/spotify_manipulation.py", 
         name="spotify_manipulation",
         conn_id="spark_default", 
@@ -45,7 +45,7 @@ with DAG(
     )
 
     task2 = SparkSubmitOperator(
-        task_id="spotify_enrichment",
+        task_id="silver_spotify_enrichment",
         application="/opt/airflow/dags/scripts/spotify_enrichment.py", 
         name="spotify_enrichment",
         conn_id="spark_default", 
