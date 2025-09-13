@@ -5,7 +5,7 @@ COPY spark/conf/core-site.xml /opt/bitnami/spark/conf/core-site.xml
 
 RUN apt-get update && apt-get install -y --no-install-recommends python3-pip && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir jupyterlab numpy wordcloud nltk pandas pyarrow matplotlib seaborn scikit-learn scipy pyspark ipykernel
+RUN pip install --no-cache-dir jupyterlab scikit-image spotipy plotly numpy wordcloud nltk pandas pyarrow matplotlib seaborn scikit-learn scipy pyspark ipykernel
 
 COPY spark/conf/custom/startup.py /home/jupyter/.ipython_startup.py
 
