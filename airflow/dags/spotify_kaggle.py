@@ -1,8 +1,6 @@
-# dags/reddit_bronze_s3a_spark.py
 from datetime import datetime
 from airflow import DAG
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
-from operators.reddit_operator import RedditOperator
 from hook.spark_hook import sparkhook
 from hook.spotify_hook import SpotifyHook
 
@@ -15,9 +13,9 @@ temp = f"s3a://temp/spotify"
 with DAG(
     dag_id="kaggle_spotify_pipeline",
     start_date=datetime(2025, 1, 1),
-    schedule=None,
+    schedule="@hourly",
     catchup=False,
-    tags=["kaggle", "spotify", "", "enrichment"],
+    tags=["kaggle", "spotify", "enrichment"],
 ) as dag:
 
     spark = sparkhook()
