@@ -25,4 +25,4 @@ class SpotifyHook(BaseHook):
         client_secret = conn.password
         host = conn.host
 
-        return client_id, client_secret, host
+        return client_id, client_secret

@@ -2,16 +2,30 @@ import argparse
 from pyspark.sql.functions import lit, concat_ws, col
 from pyspark.sql.types import DoubleType
 from pyspark.sql import SparkSession
-from spotify_utils import Manipulation, Args
+from spotify_utils import Manipulation
+import argparse
 
+
+def parse_args():
+    p = argparse.ArgumentParser()
+    p.add_argument("--input_path")
+    p.add_argument("--input_format")
+    p.add_argument("--temp")
+    p.add_argument("--output_format")
+    return p.parse_args()
 
 def manipulatedf(df):
+
+    df = df.drop_duplicates(subset=["track_id"])
+
     df = (
     df
     .withColumnRenamed("track_id", "id")
     .withColumnRenamed("track_name", "name")
     .withColumn("artists_song", concat_ws(" - ", "artists", "name"))
-)
+)   
+    
+
     cols = [
     "valence","acousticness", "artists", "danceability", "duration_ms",
     "energy", "explicit", "id", "instrumentalness", "key", "liveness", "loudness",
@@ -28,17 +42,15 @@ def manipulatedf(df):
 
     df = df.select(cols)
 
-    df = df.drop_duplicates(subset=["id"])
-
     return df
 
 def main():
 
-    args = Args.parse_args()
+    args = parse_args()
 
     spark = (
         SparkSession.builder
-        .appName("spotify_enrichment")
+        .appName("manipulation")
         .getOrCreate()
     )
 
