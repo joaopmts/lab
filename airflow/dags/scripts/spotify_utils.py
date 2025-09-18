@@ -1,33 +1,18 @@
 import argparse
 
-class Args:
-    @staticmethod
-    def parse_args():
-        p = argparse.ArgumentParser()
-        p.add_argument("--input_path")
-        p.add_argument("--input_format")
-        p.add_argument("--temp")
-        p.add_argument("--output_format")
-        p.add_argument("--output_path")
-        p.add_argument("--client_id")
-        p.add_argument("--client_secret")
-        p.add_argument("--host")
-        return p.parse_args()
-
-
 class Manipulation:
 
     @staticmethod
     def ler_csv(spark, caminho_arquivo):
-        return spark.read.option("recursiveFileLookup", "true").csv(path=caminho_arquivo, header=True)
+        return spark.read.csv(path=caminho_arquivo, header=True)
 
     @staticmethod
     def ler_json(spark, caminho_arquivo):
-        return spark.read.option("recursiveFileLookup", "true").json(path=caminho_arquivo)
+        return spark.read.json(path=caminho_arquivo)
 
     @staticmethod
     def ler_parquet(spark, caminho_arquivo):
-        return spark.read.option("recursiveFileLookup", "true").parquet(path=caminho_arquivo)
+        return spark.read.parquet(path=caminho_arquivo)
 
     @staticmethod
     def read_by_ext(spark, srcformat, src):

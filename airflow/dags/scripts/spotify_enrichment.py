@@ -1,8 +1,18 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from pyspark.sql import SparkSession
-from spotify_utils import Manipulation, Args
+from spotify_utils import Manipulation
 import time
+import argparse
+
+def parse_args():
+    p = argparse.ArgumentParser()
+    p.add_argument("--output_path")
+    p.add_argument("--output_format")
+    p.add_argument("--client_id")
+    p.add_argument("--client_secret")
+    p.add_argument("--temp")
+    return p.parse_args()
 
 def spotify_conn(client_id, client_secret):
     sp = spotipy.Spotify(
@@ -28,23 +38,25 @@ def enrich_with_year(df, sp, spark, sleep_time=0.1):
 
     all_results = []   
     batch = []         
-    batch_size = 50   
-    i = 0
+    batch_size = 50
+    mcounter = 0
+    batchcounter = 0   
     for row in ids_iter:
-        i += 1
+        mcounter += 1
         batch.append(row["id"])
-
         if len(batch) == batch_size:
-
             get_year(sp, batch, all_results)
-            print(f"Processado batch com {len(batch)} músicas, linha: {i}")
-
+            print(f"Processado batch com {len(batch)} músicas, linha: {mcounter}")
             batch = []
-            time.sleep(sleep_time) 
+            time.sleep(sleep_time)
+            batchcounter += 1
+            print(f"Processado batch {batchcounter}")
 
     if batch:
+        batchcounter += 1
         get_year(sp, batch, all_results)
         print(f"Processado último batch com {len(batch)} músicas")
+        print(f"Processado batch {batchcounter}")
 
     df_years = spark.createDataFrame(all_results, ["id", "year"])
 
@@ -55,7 +67,7 @@ def enrich_with_year(df, sp, spark, sleep_time=0.1):
 
 def main():
 
-    args = Args.parse_args()
+    args = parse_args()
 
     spark = (
         SparkSession.builder
