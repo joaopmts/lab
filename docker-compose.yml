@@ -23,6 +23,7 @@ x-airflow-common:
     - ./airflow/config:/opt/airflow/config
     - ./airflow/plugins:/opt/airflow/plugins
     - ./airflow/data:/opt/airflow/data
+    - ./airflow/logs:/opt/airflow/logs
   user: "${AIRFLOW_UID:-50000}:0"
   networks:
       - spark-net
