@@ -139,7 +139,7 @@ Data Engineering Lab
 │   ├─ Broker (19092) → broker:19092
 │   └─ UI (3042) → <a href="http://localhost:3042">http://localhost:3042</a>
 │
-└── Nifi (8443) → <a href="https://localhost:8443">http://localhost:8443</a>
+└── Nifi (8443) → <a href="https://localhost:8443">https://localhost:8443</a>
 </pre>
 
 ---
