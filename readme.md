@@ -98,7 +98,7 @@ After building the full image, edit nifi.properties to nifi.remote.input.socket.
   - User: `admin`       
   - Password: `admin`
 
-  - **Nifi**  
+- **Nifi**  
   - User: `nifi`       
   - Password: `nifiadmin1234!@`  
 
