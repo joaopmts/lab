@@ -75,9 +75,6 @@ hdfs dfs -chown admin:admin /user/admin
 hdfs dfs -ls /user
 ```
 
-## NiFi Setup
-After building the full image, edit nifi.properties to nifi.remote.input.socket.port=10015
-
 ---
 
 ## Credentials
