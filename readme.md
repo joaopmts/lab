@@ -84,7 +84,7 @@ hdfs dfs -ls /user
   - Password: `airflow`  
 
 - **MinIO**\
-  *Due to large databases on minio I will have to .gitignore some of them
+  - [Database](https://drive.google.com/drive/folders/1irErR_dXx2XzpMRyNKWbqAF7NNMKDAkh?usp=drive_link)
   - User: `admin`  
   - Password: `minioadmin`  
   - Access Key: `eDFFCzvdNdoeLlJkZhXI`                      * not setup in clean installation
