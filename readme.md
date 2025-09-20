@@ -129,7 +129,9 @@ Data Engineering Lab
 │   │   └── Jupyter Notebook (8891) → <a href="http://localhost:8891">http://localhost:8891</a>
 │   └── Worker (8881) → <a href="http://localhost:8881">http://localhost:8881</a>
 │
-└── Hue (8888) → <a href="http://localhost:8888">http://localhost:8888</a>
+├── Hue (8888) → <a href="http://localhost:8888">http://localhost:8888</a>
+│
+└── Kafka (9092)
 </pre>
 
 ---
