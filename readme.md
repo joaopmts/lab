@@ -75,6 +75,9 @@ hdfs dfs -chown admin:admin /user/admin
 hdfs dfs -ls /user
 ```
 
+## NiFi Setup
+After building the full image, edit nifi.properties to nifi.remote.input.socket.port=10015
+
 ---
 
 ## Credentials
@@ -93,7 +96,11 @@ hdfs dfs -ls /user
 
 - **Hue**  
   - User: `admin`       
-  - Password: `admin`    
+  - Password: `admin`
+
+  - **Nifi**  
+  - User: `nifi`       
+  - Password: `nifiadmin1234!@`  
 
 ---
 
@@ -131,7 +138,11 @@ Data Engineering Lab
 │
 ├── Hue (8888) → <a href="http://localhost:8888">http://localhost:8888</a>
 │
-└── Kafka (9092)
+├── Kafka (9092)
+│   ├─ Broker (19092) → broker:19092
+│   └─ UI (3042) → <a href="http://localhost:3042">http://localhost:3042</a>
+│
+└── Nifi (8443) → <a href="https://localhost:8443">http://localhost:8443</a>
 </pre>
 
 ---
