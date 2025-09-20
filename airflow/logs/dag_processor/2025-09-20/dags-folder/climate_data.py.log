@@ -1,0 +1,17 @@
+{"timestamp":"2025-09-20T07:06:11.713073","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:06:42.380632","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:07:13.004196","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:07:43.663940","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:09:55.556868","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:10:26.271051","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:10:57.046659","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:11:27.535723","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:11:58.074656","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:12:28.472124","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:12:58.817795","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:13:29.221122","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:13:59.576313","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:14:29.918545","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:15:00.342911","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:15:30.672606","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:16:01.074546","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/climate_data.py","logger":"airflow.models.dagbag.DagBag"}

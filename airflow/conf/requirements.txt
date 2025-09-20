@@ -2,3 +2,4 @@ apache-airflow-providers-apache-spark
 pyspark==3.5.4
 praw
 spotipy
+confluent-kafka

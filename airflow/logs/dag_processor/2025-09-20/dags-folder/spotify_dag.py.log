@@ -1,0 +1,51 @@
+{"timestamp":"2025-09-20T07:06:09.045627","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:06:09.783157","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:06:09.792893","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:06:40.473460","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:06:40.510643","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:06:40.515888","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:07:11.109522","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:07:11.140505","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:07:11.145470","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:07:41.767931","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:07:41.797911","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:07:41.803319","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:09:53.363046","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:09:54.047123","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:09:54.056419","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:10:24.363843","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:10:24.411787","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:10:24.421031","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:10:55.284849","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:10:55.323992","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:10:55.330354","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:11:25.776618","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:11:25.806792","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:11:25.812361","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:11:56.253456","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:11:56.282326","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:11:56.289645","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:12:26.704282","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:12:26.735381","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:12:26.741682","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:12:57.066203","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:12:57.094856","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:12:57.100372","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:13:27.440930","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:13:27.471291","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:13:27.477397","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:13:57.851288","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:13:57.887827","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:13:57.894998","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:14:28.197408","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:14:28.226622","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:14:28.232407","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:14:58.573156","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:14:58.604586","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:14:58.611638","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:15:28.935185","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:15:28.963091","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:15:28.969356","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:15:59.320937","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-20T07:15:59.354939","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-20T07:15:59.360834","level":"info","event":"Connection Retrieved 'spotify_default'","logger":"airflow.hooks.base"}
