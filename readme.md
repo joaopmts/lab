@@ -73,7 +73,7 @@ hdfs dfs -ls /user
 
 ---
 
-## Credentials anb Informations
+## Credentials and Informations
 
 - **Airflow**  
   - User: `airflow`  
