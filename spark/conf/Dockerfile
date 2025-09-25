@@ -5,7 +5,25 @@ COPY spark/conf/core-site.xml /opt/bitnami/spark/conf/core-site.xml
 
 RUN apt-get update && apt-get install -y --no-install-recommends python3-pip && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir jupyterlab scikit-image spotipy plotly numpy wordcloud nltk pandas pyarrow matplotlib seaborn scikit-learn scipy pyspark ipykernel
+RUN pip install --no-cache-dir jupyterlab scikit-image spotipy plotly numpy wordcloud nltk pandas pyarrow matplotlib seaborn scikit-learn scipy pyspark ipykernel delta-spark
+
+ADD https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5_2.12/1.6.1/iceberg-spark-runtime-3.5_2.12-1.6.1.jar \
+    /opt/bitnami/spark/jars/
+RUN chmod 777 /opt/bitnami/spark/jars/iceberg-spark-runtime-3.5_2.12-1.6.1.jar
+
+ADD https://repo1.maven.org/maven2/io/delta/delta-spark_2.12/3.2.0/delta-spark_2.12-3.2.0.jar \
+    /opt/bitnami/spark/jars/
+    
+ADD https://repo1.maven.org/maven2/io/delta/delta-storage/3.2.0/delta-storage-3.2.0.jar \
+    /opt/bitnami/spark/jars/
+RUN chmod 777 /opt/bitnami/spark/jars/delta-*.jar
+
+RUN echo "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension,org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions" > /opt/bitnami/spark/conf/spark-defaults.conf && \
+    echo "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
+    echo "spark.sql.catalog.local=org.apache.iceberg.spark.SparkCatalog" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
+    echo "spark.sql.catalog.local.type=hadoop" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
+    echo "spark.sql.catalog.local.warehouse=hdfs://namenode:8020/user/hive/warehouse" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
+    echo "spark.sql.defaultCatalog=local" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
 
 COPY spark/conf/custom/startup.py /home/jupyter/.ipython_startup.py
 

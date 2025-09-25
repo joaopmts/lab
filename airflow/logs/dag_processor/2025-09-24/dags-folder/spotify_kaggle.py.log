@@ -1,0 +1,148 @@
+{"timestamp":"2025-09-24T22:39:05.502140","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:39:05.514280Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:39:15.677262","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:39:15.685771Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:39:25.809534","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:39:25.839681Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:39:35.544981","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:39:35.554963Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:39:45.666167","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:39:45.676022Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:39:56.151024","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:39:56.161828Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:40:06.246112","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:40:06.256114Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:40:16.369178","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:40:16.376927Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:40:25.673580Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:40:25.667864","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:40:35.957371","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:40:35.964497Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:40:46.088770","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:40:46.095727Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:40:56.266561","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:40:56.282394Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:41:06.623178","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:41:06.633887Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:41:16.756075","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:41:16.763818Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:41:25.876042","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:41:25.890567Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:41:36.293532","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:41:36.299875Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:41:46.432124","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:41:46.439467Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:41:56.560704","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:41:56.568392Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:42:05.962120","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:42:05.971082Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:42:16.110364","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:42:16.116998Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:42:26.236042","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:42:26.244199Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:42:36.653987","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:42:36.664762Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:52:20.600400","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:52:20.612767Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:52:30.749382","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:52:30.760171Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:52:40.385748","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:52:40.414260Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:52:50.572937","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:52:50.581434Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:53:00.703733","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:53:00.711566Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:53:10.626534Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:53:10.612038","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:53:21.259817","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:53:21.271172Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:53:31.417701","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:53:31.431449Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:53:40.889341","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:53:40.904593Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:53:51.033461","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:53:51.043158Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:54:01.173165","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:54:01.180469Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:54:10.632440","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:54:10.649731Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:54:20.822587","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:54:20.833702Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:55:58.720676","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:55:58.733326Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:56:08.867068","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:56:08.878591Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:56:19.733471","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:56:19.747159Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:56:28.886950","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:56:28.898386Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:56:39.018574","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:56:39.026964Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:56:49.001459","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:56:49.022955Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:56:59.681373","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:56:59.691520Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:57:09.816931","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:57:09.824447Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:57:19.269471","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:57:19.282411Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:57:29.424105","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:57:29.433274Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:57:39.561336","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:57:39.569270Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:57:50.036285","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:57:50.051059Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:57:59.139925","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:57:59.150884Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:58:09.281009","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:58:09.288943Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:58:19.761097","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:58:19.770920Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:58:29.887397","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:58:29.897348Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T22:58:40.023471","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T22:58:40.036487Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:01:19.486475","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:01:19.497206Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:01:29.662765","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:01:29.678060Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:01:40.292018","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:01:40.304127Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:01:50.429174","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:01:50.437128Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:02:00.554035","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:02:00.563954Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:02:09.989585Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:02:09.970429","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:02:20.133151","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:02:20.142654Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:02:30.259668","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:02:30.271581Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:02:40.167789Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:02:40.154326","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:02:49.816193","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:02:49.830491Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:02:59.951766","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:02:59.965172Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:03:10.437375","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:03:10.448347Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:03:20.529228","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:03:20.540144Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:03:30.662797","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:03:30.669525Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:03:39.843733","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:03:39.855931Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:03:50.219533","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:03:50.231839Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:04:00.343085","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:04:00.350973Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:04:10.468952","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:04:10.477440Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:04:20.881056","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:04:20.888670Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:04:29.999644","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:04:30.006854Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:04:40.127971","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:04:40.134920Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
+{"timestamp":"2025-09-24T23:04:50.771614","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/spotify_kaggle.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-24T23:04:50.786770Z","level":"warning","event":"Process exited abnormally","exit_code":126,"logger":"processor"}
