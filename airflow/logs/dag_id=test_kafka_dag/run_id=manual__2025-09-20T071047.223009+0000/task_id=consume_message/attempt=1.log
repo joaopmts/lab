@@ -1,6 +1,0 @@
-{"timestamp":"2025-09-20T07:10:50.844618","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
-{"timestamp":"2025-09-20T07:10:50.844985","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
-{"timestamp":"2025-09-20T07:10:53.995906Z","level":"info","event":"[Consumer] Mensagem recebida: {\"produto\": \"Notebook\", \"valor\": 3500, \"regiao\": \"SP\"}","chan":"stdout","logger":"task"}
-{"timestamp":"2025-09-20T07:10:53.996505Z","level":"info","event":"[Consumer] Mensagem recebida: {\"produto\": \"Mouse\", \"valor\": 120, \"regiao\": \"RJ\"}","chan":"stdout","logger":"task"}
-{"timestamp":"2025-09-20T07:10:53.996833Z","level":"info","event":"[Consumer] Mensagem recebida: {\"produto\": \"Monitor\", \"valor\": 1500, \"regiao\": \"MG\"}","chan":"stdout","logger":"task"}
-{"timestamp":"2025-09-20T07:10:56.011834","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

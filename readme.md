@@ -40,7 +40,7 @@ docker system prune -a --volumes
 ## Postgres Setup
 
 ```powershell
-docker compose up postgres
+docker compose up postgres -d
 ```
 ```powershell
 docker exec -it postgres psql -U admin -d postgres -c "CREATE DATABASE airflow_db;"

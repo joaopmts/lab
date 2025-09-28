@@ -23,7 +23,7 @@ RUN echo "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension,org.apach
     echo "spark.sql.catalog.local=org.apache.iceberg.spark.SparkCatalog" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
     echo "spark.sql.catalog.local.type=hadoop" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
     echo "spark.sql.catalog.local.warehouse=hdfs://namenode:8020/user/hive/warehouse" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
-    echo "spark.sql.defaultCatalog=local" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
+    echo "spark.sql.defaultCatalog=local" >> /opt/bitnami/spark/conf/spark-defaults.conf 
 
 COPY spark/conf/custom/startup.py /home/jupyter/.ipython_startup.py
 
