@@ -1,0 +1,342 @@
+{"timestamp":"2025-10-08T19:20:35.904506","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:20:35.935083","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:21:06.347791","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:21:06.373471","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:21:36.989180","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:21:37.014828","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:22:07.641667","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:22:07.661658","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:22:38.222119","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:22:38.246502","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:23:08.825908","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:23:08.849786","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:23:39.438202","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:23:39.459531","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:24:10.083961","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:24:10.106758","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:24:40.687594","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:24:40.712076","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:25:11.368410","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:25:11.388949","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:25:42.009874","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:25:42.034310","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:26:12.490961","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:26:12.516453","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:26:42.810107","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:26:42.835468","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:27:13.211839","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:27:13.252410","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:27:43.985725","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:27:44.012175","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:28:14.355388","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:28:14.385600","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:28:44.683545","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:28:44.709556","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:29:15.008090","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:29:15.028578","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:29:45.327196","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:29:45.356440","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:30:15.648483","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:30:15.678538","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:30:45.976877","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:30:46.001906","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:31:16.327619","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:31:16.349915","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:31:46.717180","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:31:46.739226","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:32:17.020694","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:32:17.050704","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:32:47.377631","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:32:47.405457","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:33:17.715617","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:33:17.737109","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:33:48.020240","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:33:48.046391","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:34:18.382351","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:34:18.409233","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:34:48.716590","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:34:48.740782","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:35:19.014707","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:35:19.040560","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:35:49.394049","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:35:49.418534","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:36:19.738414","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:36:19.766207","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:36:50.117478","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:36:50.139621","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:37:20.510945","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:37:20.535177","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:37:50.905531","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:37:50.929454","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:38:21.309268","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:38:21.334294","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:38:51.669258","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:38:51.692377","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:39:21.985964","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:39:22.010180","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:39:52.370881","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:39:52.397573","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:40:22.732299","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:40:22.756962","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:40:53.090886","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:40:53.118162","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:41:23.481416","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:41:23.508130","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:41:53.839058","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:41:53.859437","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:42:24.171832","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:42:24.202757","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:42:54.492903","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:42:54.516872","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:43:24.802444","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:43:24.827149","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:43:55.221361","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:43:55.241226","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:44:25.545129","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:44:25.570861","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:44:55.864943","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:44:55.891699","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:45:26.325448","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:45:26.350461","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:45:56.732906","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:45:56.757928","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:46:27.094637","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:46:27.118506","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:46:57.452144","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:46:57.477395","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:47:27.798181","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:47:27.825625","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:47:58.190506","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:47:58.210404","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:48:28.525747","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:48:28.549815","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:48:58.844608","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:48:58.870469","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:49:29.211677","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:49:29.239217","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:49:59.522244","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:49:59.550219","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:50:29.910292","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:50:29.930052","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:51:00.286074","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:51:00.309334","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:51:30.602392","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:51:30.626328","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:52:00.936438","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:52:00.960518","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:52:31.372011","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:52:31.395838","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:53:01.787997","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:53:01.810642","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:53:32.141618","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:53:32.165693","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:54:02.503843","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:54:02.529071","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:54:32.835357","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:54:32.863488","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:55:03.205492","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:55:03.227488","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:55:33.587268","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:55:33.615403","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:56:03.946833","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:56:03.970406","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:56:34.346226","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:56:34.366575","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:57:04.710788","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:57:04.736282","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:57:35.048274","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:57:35.071591","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:58:05.398579","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:58:05.435164","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:58:35.779790","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:58:35.801967","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:59:06.116056","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:59:06.138386","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T19:59:36.467315","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T19:59:36.495867","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:00:06.815538","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:00:06.843788","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:00:37.130092","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:00:37.153932","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:01:07.547034","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:01:07.575451","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:01:37.866491","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:01:37.890393","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:02:08.254422","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:02:08.282661","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:02:38.658334","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:02:38.682477","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:03:08.966964","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:03:08.991456","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:03:39.320133","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:03:39.343033","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:04:09.673067","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:04:09.701003","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:04:40.024268","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:04:40.049399","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:05:10.369090","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:05:10.398025","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:05:40.741682","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:05:40.767556","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:06:11.105295","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:06:11.129284","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:06:41.462005","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:06:41.490862","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:07:11.815732","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:07:11.835926","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:07:42.170954","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:07:42.194207","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:08:12.525868","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:08:12.555290","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:08:42.855547","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:08:42.880767","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:09:13.213871","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:09:13.238577","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:09:43.661081","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:09:43.682414","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:10:13.997427","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:10:14.031697","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:10:44.365605","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:10:44.386068","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:11:14.747867","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:11:14.770377","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:11:45.148156","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:11:45.172329","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:12:15.499056","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:12:15.528483","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:12:45.861704","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:12:45.881114","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:13:16.189307","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:13:16.213188","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:13:46.568420","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:13:46.591870","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:14:16.890198","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:14:16.913890","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:14:47.242912","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:14:47.264486","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:15:17.564907","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:15:17.587110","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:15:47.845764","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:15:47.874272","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:16:18.237827","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:16:18.258808","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:16:48.604789","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:16:48.625816","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:17:18.954504","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:17:18.978544","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:17:49.314329","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:17:49.336339","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:18:19.657581","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:18:19.681689","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:18:50.196513","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:18:50.221327","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:19:20.789145","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:19:20.808747","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:19:51.438706","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:19:51.466612","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:20:22.084640","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:20:22.104842","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:20:52.808277","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:20:52.837160","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:21:23.593546","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:21:23.617733","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:21:54.297989","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:21:54.324930","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:22:24.951626","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:22:24.975487","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:22:55.665644","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:22:55.701133","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:23:26.353890","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:23:26.375390","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:23:57.009806","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:23:57.033412","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:24:27.729380","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:24:27.757405","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:24:58.413908","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:24:58.439974","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:25:29.159763","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:25:29.182709","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:25:59.833543","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:25:59.864919","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:26:30.598255","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:26:30.623858","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:27:01.352607","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:27:01.381677","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:27:32.010937","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:27:32.035613","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:28:02.838319","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:28:02.859488","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:28:33.587697","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:28:33.608729","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:29:04.305861","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:29:04.326828","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:29:34.972649","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:29:34.998115","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:30:05.712474","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:30:05.743869","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:30:36.433851","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:30:36.459356","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:31:07.098404","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:31:07.140457","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:31:37.836706","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:31:37.862468","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:32:08.493017","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:32:08.513099","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:32:39.149710","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:32:39.176593","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:33:09.815659","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:33:09.840907","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:33:40.502869","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:33:40.529375","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:34:11.196924","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:34:11.232604","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:34:41.854128","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:34:41.874492","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:35:12.504368","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:35:12.525018","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:35:43.197821","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:35:43.223900","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:36:13.887872","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:36:13.907692","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:36:44.702462","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:36:44.726402","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:37:15.500485","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:37:15.527461","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:37:46.168011","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:37:46.192619","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:38:16.864129","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:38:16.890264","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:38:47.569535","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:38:47.602252","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:39:18.232631","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:39:18.256942","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:39:48.855288","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:39:48.879757","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:40:19.573128","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:40:19.603245","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:40:50.303626","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:40:50.327796","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:41:20.979403","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:41:20.999794","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:41:51.690503","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:41:51.710640","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:42:22.352370","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:42:22.373336","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:42:53.037180","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:42:53.063323","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:43:23.382598","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:43:23.408275","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:43:53.779822","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:43:53.815604","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:44:24.171318","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:44:24.192570","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:44:54.561900","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:44:54.588273","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:45:24.879732","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:45:24.905988","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:45:55.254325","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:45:55.286121","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:46:25.705196","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:46:25.728572","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-10-08T20:46:56.108631","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_silver_sso.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-10-08T20:46:56.135129","level":"info","event":"Connection Retrieved 'spark_default'","logger":"airflow.hooks.base"}
