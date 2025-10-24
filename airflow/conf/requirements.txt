@@ -1,4 +1,5 @@
 apache-airflow-providers-apache-spark
+apache-airflow-providers-databricks
 pyspark==3.5.4
 praw
 spotipy
