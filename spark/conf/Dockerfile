@@ -18,11 +18,25 @@ ADD https://repo1.maven.org/maven2/io/delta/delta-storage/3.2.0/delta-storage-3.
     /opt/bitnami/spark/jars/
 RUN chmod 777 /opt/bitnami/spark/jars/delta-*.jar
 
+# Kafka connector jars
+ADD https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.5.4/spark-sql-kafka-0-10_2.12-3.5.4.jar \
+    /opt/bitnami/spark/jars/
+ADD https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.4.1/kafka-clients-3.4.1.jar \
+    /opt/bitnami/spark/jars/
+ADD https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.5.4/spark-token-provider-kafka-0-10_2.12-3.5.4.jar \
+    /opt/bitnami/spark/jars/
+ADD https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar \
+    /opt/bitnami/spark/jars/
+RUN chmod 777 /opt/bitnami/spark/jars/spark-sql-kafka-*.jar \
+              /opt/bitnami/spark/jars/kafka-clients-*.jar \
+              /opt/bitnami/spark/jars/spark-token-provider-*.jar \
+              /opt/bitnami/spark/jars/commons-pool2-*.jar
+
 RUN echo "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension,org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions" > /opt/bitnami/spark/conf/spark-defaults.conf && \
     echo "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
     echo "spark.sql.catalog.local=org.apache.iceberg.spark.SparkCatalog" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
     echo "spark.sql.catalog.local.type=hadoop" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
-    echo "spark.sql.catalog.local.warehouse=hdfs://namenode:8020/user/hive/warehouse" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
+    echo "spark.sql.catalog.local.warehouse=s3a://bronze/warehouse" >> /opt/bitnami/spark/conf/spark-defaults.conf && \
     echo "spark.sql.defaultCatalog=local" >> /opt/bitnami/spark/conf/spark-defaults.conf 
 
 COPY spark/conf/custom/startup.py /home/jupyter/.ipython_startup.py

@@ -45,7 +45,6 @@ docker compose up postgres -d
 ```powershell
 docker exec -it postgres psql -U admin -d postgres -c "CREATE DATABASE airflow_db;"
 docker exec -it postgres psql -U admin -d postgres -c "CREATE DATABASE metastore_db;"
-docker exec -it postgres psql -U admin -d postgres -c "CREATE DATABASE hue_db;"
 docker exec -it postgres psql -U admin -d postgres -c "CREATE USER hive WITH PASSWORD 'password';"
 docker exec -it postgres psql -U admin -d postgres -c "GRANT ALL PRIVILEGES ON DATABASE metastore_db TO hive;"
 ```
@@ -60,36 +59,16 @@ docker compose up -d --build
 
 ---
 
-## HDFS Setup
-
-```bash
-docker exec -it namenode bash
-```
-```bash
-hdfs dfs -mkdir -p /user/admin
-hdfs dfs -chown admin:admin /user/admin
-hdfs dfs -ls /user
-```
-
----
-
 ## Credentials and Informations
 
 - **Airflow**  
   - User: `airflow`  
   - Password: `airflow`  
 
-- **MinIO**\
+- **MinIO**  
   - [Databases](https://drive.google.com/drive/folders/1irErR_dXx2XzpMRyNKWbqAF7NNMKDAkh?usp=drive_link)
   - User: `admin`  
   - Password: `minioadmin`  
-  - Access Key: `eDFFCzvdNdoeLlJkZhXI`                      * not setup in clean installation
-  - Secret Key: `gU3PQYFs6K60DvP5ut52zMQJAU3M3rW4XtCY9lqb`  * not setup in clean installation 
-  
-
-- **Hue**  
-  - User: `admin`       
-  - Password: `admin`
 
 - **Nifi**  
   - User: `nifi`       
@@ -115,21 +94,14 @@ Data Engineering Lab
 │   ├── Postgres (5442) 
 │   └── Redis (6379) 
 │
-├── Hadoop
-│   ├── NameNode (9870) → <a href="http://localhost:9870">http://localhost:9870</a>
-│   └── DataNode (9864) → <a href="http://localhost:9864">http://localhost:9864</a>
-│
 ├── Hive
-│   ├── Metastore (9083)
-│   └── HiveServer2 (10000, 10002) → <a href="http://localhost:10002">http://localhost:10002</a>
+│   └── Metastore (9083)
 │
 ├── Spark
 │   ├── Master
 │   │   ├── Cluster (7077) → spark://spark-master:7077
 │   │   └── Jupyter Notebook (8891) → <a href="http://localhost:8891">http://localhost:8891</a>
 │   └── Worker (8881) → <a href="http://localhost:8881">http://localhost:8881</a>
-│
-├── Hue (8888) → <a href="http://localhost:8888">http://localhost:8888</a>
 │
 ├── Kafka (9092)
 │   ├─ Broker (19092) → broker:19092
@@ -141,26 +113,3 @@ Data Engineering Lab
 ---
 
 ## Project File Structure
-
-```
-Project Root
-├── airflow
-│   ├── dags 
-│   │   └── scripts
-│   ├── data
-│   │   ├── climate_data_project (Climate Project)
-│   │   └── reddit_project (Reddit Project)
-│   ├── plugins
-│   │   ├── hook
-│   │   └── operators
-│   └── conf
-│       └── airflowconnections.txt   (Airflow Connections list)
-└── spark
-    └── jupyter-home
-              └── notebooks
-```
-
-## Notes
-
-- All services are connected to the `spark-net` network.  
-- Check the `docker-compose.yml` file for additional volumes and configuration customization.  
