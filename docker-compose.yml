@@ -57,7 +57,9 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
-      KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+      KAFKA_LOG_DIRS: '/var/lib/kafka/data'
+    volumes:
+      - ./kafka/data:/var/lib/kafka/data
     networks:
       - spark-net
 
@@ -75,12 +77,12 @@ services:
       - TZ=America/Sao_Paulo
     volumes:
       - nifi-logs:/opt/nifi/nifi-current/logs
-      - nifi-conf:/opt/nifi/nifi-current/conf
       - nifi-state:/opt/nifi/nifi-current/state
       - nifi-content:/opt/nifi/nifi-current/content_repository
       - nifi-database:/opt/nifi/nifi-current/database_repository
       - nifi-flowfile:/opt/nifi/nifi-current/flowfile_repository
       - nifi-provenance:/opt/nifi/nifi-current/provenance_repository
+      - ./nifi/conf:/opt/nifi/nifi-current/conf
     networks:
       - spark-net
 
@@ -98,13 +100,13 @@ services:
       - spark-net
 
   minio:
-    image: bitnami/minio:2024
+    image: firstfinger/minio:latest
     container_name: minio
     environment:
       MINIO_ROOT_USER: admin
       MINIO_ROOT_PASSWORD: minioadmin
     volumes:
-      - ./minio/data:/bitnami/minio/data
+      - ./minio/data:/data
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -196,77 +198,6 @@ services:
     volumes:
         - warehouse:/opt/hive/data/warehouse
         - ./assets/postgresql-42.6.0.jar:/opt/hive/lib/postgres.jar
-    networks:
-      - spark-net
-
-  hiveserver2:
-    image: apache/hive:4.0.0
-    depends_on:
-      metastore:
-        condition: service_started
-    container_name: hiveserver2
-    environment:
-      HIVE_SERVER2_THRIFT_PORT: 10000
-      SERVICE_OPTS: '-Xmx1G -Dhive.metastore.uris=thrift://metastore:9083'
-      IS_RESUME: 'true'
-      SERVICE_NAME: 'hiveserver2'
-    ports:
-      - '10000:10000'
-      - '10002:10002'
-    volumes:
-      - warehouse:/opt/hive/data/warehouse
-      - ./assets/postgresql-42.6.0.jar:/opt/hive/lib/postgres.jar
-    networks:
-      - spark-net
-  
-  namenode:
-    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
-    container_name: namenode
-    hostname: namenode
-    depends_on:
-      postgres:
-        condition: service_healthy
-    volumes:
-      - ./hadoop/hdfs/namenode:/hadoop/dfs/name
-      - ./hadoop/util:/util
-    env_file:
-      - ./hadoop/hadoop.env
-    ports:
-      - "9870:9870"
-    networks:
-      - spark-net
-
-  datanode:
-    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
-    container_name: datanode
-    hostname: datanode
-    volumes:
-      - ./hadoop/hdfs/datanode:/hadoop/dfs/data
-      - ./hadoop/util:/util
-    env_file:
-      - ./hadoop/hadoop.env
-    environment:
-      SERVICE_PRECONDITION: "namenode:9870"
-    depends_on:
-      namenode:
-        condition: service_started
-    ports:
-      - "9864:9864"
-    networks:
-      - spark-net
-
-  hue:
-    image: gethue/hue:4.6.0
-    hostname: hue
-    container_name: hue
-    dns: 8.8.8.8
-    ports:
-    - "8888:8888"
-    volumes:
-      - ./hue/hue.ini:/usr/share/hue/desktop/conf/z-hue.ini
-    depends_on:
-      postgres:
-        condition: service_started
     networks:
       - spark-net
 
@@ -495,10 +426,8 @@ services:
 
 volumes:
   airflow-db-volume:
-  hive-db:
   warehouse:
   nifi-logs:
-  nifi-conf:
   nifi-state:
   nifi-content:
   nifi-database:
