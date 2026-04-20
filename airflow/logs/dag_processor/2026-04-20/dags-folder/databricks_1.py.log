@@ -1,0 +1,16 @@
+{"timestamp":"2026-04-20T14:24:40.537638","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:26:25.133949","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:26:55.761306","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:27:26.431784","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:27:57.031894","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:28:27.659535","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:28:58.165518","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:29:28.450193","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:29:58.805323","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:30:29.052029","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:30:59.285756","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:31:29.680502","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:31:59.962398","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:32:30.680306","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:33:01.063450","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:33:31.137263","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/databricks_1.py","logger":"airflow.models.dagbag.DagBag"}

@@ -1,0 +1,16 @@
+{"timestamp":"2026-04-20T14:24:39.902464","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:26:25.019973","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:26:55.720473","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:27:26.348038","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:27:56.950186","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:28:27.577027","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:28:58.120460","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:29:28.409913","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:29:58.743980","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:30:28.866231","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:30:59.214400","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:31:29.588583","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:31:59.918533","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:32:30.315043","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:33:00.782555","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:33:31.048558","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kafka_test.py","logger":"airflow.models.dagbag.DagBag"}

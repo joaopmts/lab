@@ -100,7 +100,7 @@ services:
       - spark-net
 
   minio:
-    image: firstfinger/minio:latest
+    image: joaopmts99/minio:latest
     container_name: minio
     environment:
       MINIO_ROOT_USER: admin

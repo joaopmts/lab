@@ -1,0 +1,16 @@
+{"timestamp":"2026-04-20T14:24:39.499383","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:26:24.334793","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:26:55.071007","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:27:25.713198","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:27:56.338461","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:28:26.954946","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:28:57.680634","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:29:27.935666","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:29:58.297099","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:30:28.614621","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:30:58.978527","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:31:29.399962","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:31:59.744461","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:32:30.118226","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:33:00.504055","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-20T14:33:30.882678","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/s3a_consult_pyophook.py","logger":"airflow.models.dagbag.DagBag"}
