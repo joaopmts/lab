@@ -148,6 +148,8 @@ services:
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark-master:7077
+      - AWS_ACCESS_KEY_ID=${S3AACESS}
+      - AWS_SECRET_ACCESS_KEY=${S3ASECRET}
     ports:
       - 8881:8081
     depends_on:
