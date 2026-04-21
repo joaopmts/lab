@@ -106,6 +106,8 @@ Data Engineering Lab
 │   ├─ Broker (19092) → broker:19092
 │   └─ UI (3042) → <a href="http://localhost:3042">http://localhost:3042</a>
 │
+├── Trino (8085) → <a href="http://localhost:8085">http://localhost:8085</a>
+│
 └── Nifi (8443) → <a href="https://localhost:8443">https://localhost:8443</a>
 </pre>
 
@@ -121,6 +123,7 @@ Data Engineering Lab
 | **MinIO** | custom image | S3-compatible object storage |
 | **Apache Spark** | `3.5.4` | Distributed processing + JupyterLab |
 | **Apache Airflow** | `3.0.4` (CeleryExecutor) | Pipeline orchestration |
+| **Trino** | `469` | Interactive SQL query engine |
 | **Apache Hive Metastore** | `4.0.0` | Table catalog |
 | **PostgreSQL** | `13` | Airflow metadata + Hive Metastore DB |
 | **Redis** | `7.2` | Celery message broker |
@@ -192,8 +195,43 @@ lab/
 ├── minio/
 │   └── data/                     # MinIO buckets data
 ├── postgres/                     # PostgreSQL data volume
+├── trino/
+│   └── conf/
+│       ├── config.properties     # Single-node coordinator config
+│       ├── jvm.config
+│       ├── node.properties
+│       └── catalog/
+│           ├── hive.properties       # Hive tables on MinIO
+│           ├── iceberg.properties    # Iceberg tables on MinIO
+│           ├── delta.properties      # Delta Lake tables on MinIO
+│           ├── postgresql.properties # Direct PostgreSQL access
+│           └── kafka.properties      # Kafka topics as tables
 ├── assets/
 │   └── postgresql-42.6.0.jar     # JDBC driver for Hive Metastore
 └── docs/
     └── images/                   # DAG and results screenshots
+```
+
+---
+
+## Trino — Catalogs
+
+| Catalog | Connector | Source |
+|---|---|---|
+| `hive` | hive | Hive Metastore + MinIO |
+| `iceberg` | iceberg | Hive Metastore + MinIO (matches Spark `local` catalog) |
+| `delta` | delta_lake | Hive Metastore + MinIO (matches Spark `spark_catalog`) |
+| `postgresql` | postgresql | PostgreSQL `postgres:5432` |
+| `kafka` | kafka | Kafka broker `broker:19092` |
+
+**Query via CLI:**
+```bash
+docker exec trino trino
+```
+
+**Query example:**
+```sql
+SHOW CATALOGS;
+SHOW SCHEMAS FROM iceberg;
+SELECT * FROM postgresql.public.dag LIMIT 10;
 ```
