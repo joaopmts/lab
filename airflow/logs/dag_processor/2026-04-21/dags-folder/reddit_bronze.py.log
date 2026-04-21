@@ -17,3 +17,5 @@
 {"timestamp":"2026-04-21T07:17:47.873408","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_bronze.py","logger":"airflow.models.dagbag.DagBag"}
 {"timestamp":"2026-04-21T07:18:18.404460","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_bronze.py","logger":"airflow.models.dagbag.DagBag"}
 {"timestamp":"2026-04-21T07:18:48.844004","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_bronze.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-21T07:19:19.193450","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_bronze.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2026-04-21T07:19:49.603148","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/reddit_bronze.py","logger":"airflow.models.dagbag.DagBag"}
