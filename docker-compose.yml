@@ -203,6 +203,25 @@ services:
     networks:
       - spark-net
 
+  trino:
+    image: trinodb/trino:469
+    container_name: trino
+    hostname: trino
+    ports:
+      - "8085:8080"
+    volumes:
+      - ./trino/conf/config.properties:/etc/trino/config.properties
+      - ./trino/conf/jvm.config:/etc/trino/jvm.config
+      - ./trino/conf/node.properties:/etc/trino/node.properties
+      - ./trino/conf/catalog:/etc/trino/catalog
+    networks:
+      - spark-net
+    depends_on:
+      metastore:
+        condition: service_started
+      minio:
+        condition: service_started
+
   redis:
     image: redis:7.2-bookworm
     expose:
