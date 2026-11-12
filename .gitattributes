@@ -1,0 +1,8 @@
+# Scripts e configs usados dentro de containers Linux precisam de LF
+*.sh          text eol=lf
+*.conf        text eol=lf
+*.properties  text eol=lf
+*.xml         text eol=lf
+*.cfg         text eol=lf
+Dockerfile    text eol=lf
+*.yml         text eol=lf

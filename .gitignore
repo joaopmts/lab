@@ -1,2 +1,51 @@
-minio
+# ---------------------------------------------------------------
+# Segredos / variáveis locais (use .env.example como modelo)
+# ---------------------------------------------------------------
+.env
+*.env
+!.env.example
+airflow/conf/Airflow Connections.local.txt
+
+# ---------------------------------------------------------------
+# Dados e estado de runtime dos serviços (gerados pelos containers)
+# ---------------------------------------------------------------
+minio/
+postgres/postgres-db-volume/
+kafka/data/
+airflow/logs/
+airflow/data/
 repo
+
+
+# ---------------------------------------------------------------
+# Jupyter / Spark
+# ---------------------------------------------------------------
+.ipynb_checkpoints/
+.Trash-*/
+spark-warehouse/
+metastore_db/
+derby.log
+spark/jupyter_home/notebooks/**/.cache
+# Material pessoal / dados de terceiros — não publicar
+spark/jupyter_home/notebooks/Vivo/
+
+# ---------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ---------------------------------------------------------------
+# IDE / SO
+# ---------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# NiFi: conf agora vive no volume nomeado nifi-conf. A pasta local antiga
+# (se existir) é só backup e não é versionada. Flows exportados: nifi/flows/
+nifi/conf/
