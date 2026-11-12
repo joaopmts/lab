@@ -1,35 +1,42 @@
-from datetime import datetime
+"""Reddit -> um CSV local por execução em /opt/airflow/data/reddit_project."""
 import os
+from datetime import datetime
+
 import pandas as pd
-from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
+from airflow.sdk import DAG
+
 from operators.reddit_operator import RedditOperator
 
-path = "/opt/airflow/data/reddit_project"
+OUTPUT_DIR = "/opt/airflow/data/reddit_project"
 
-def csv(ti):
-    data = ti.xcom_pull(task_ids="reddit_search")
-    out_path = os.path.join(path, f"reddit_post_titles_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv")
-    df = pd.DataFrame(data)
-    df.to_csv(out_path, index=False, encoding="utf-8")
+
+def save_csv(ti, ts_nodash, **_):
+    data = ti.xcom_pull(task_ids="reddit_search") or []
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    out_path = os.path.join(OUTPUT_DIR, f"reddit_post_titles_{ts_nodash}.csv")
+    pd.DataFrame(data).to_csv(out_path, index=False, encoding="utf-8")
+    print(f"{len(data)} posts salvos em {out_path}")
+
 
 with DAG(
     dag_id="reddit_one_file",
     start_date=datetime(2025, 1, 1),
-    schedule="@hourly",  
+    schedule="@hourly",
     catchup=False,
-    tags=["reddit","one file"],
+    max_active_runs=1,
+    tags=["reddit", "one file"],
 ) as dag:
 
-    task1 = RedditOperator(
+    reddit_search = RedditOperator(
         task_id="reddit_search",
-        query="bf6",      
-        time_filter='day' 
+        query="bf6",
+        time_filter="day",
     )
 
-    task2 = PythonOperator(
+    savecsv = PythonOperator(
         task_id="savecsv",
-        python_callable=csv,
+        python_callable=save_csv,
     )
 
-    task1 >> task2
+    reddit_search >> savecsv
