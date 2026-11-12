@@ -1,19 +1,10 @@
-import requests
+"""Job Spark de teste: lê CSVs de s3a://teste/reddit e mostra as 10 primeiras linhas."""
 from pyspark.sql import SparkSession
-from pyspark.conf import SparkConf
-from pyspark.sql import SparkSession
-import os
+
+PATH = "s3a://teste/reddit"
 
 if __name__ == "__main__":
-
-    spark = SparkSession \
-    .builder \
-    .master("spark://spark-master:7077").getOrCreate()
-
-    df_hdfs = spark.read.csv(
-        path="s3a://teste/reddit",
-        header=True
-    )
-
-    df_hdfs.show(10)
+    # master vem do spark-submit (connection spark_default)
+    spark = SparkSession.builder.appName("ReadS3ATest").getOrCreate()
+    spark.read.csv(path=PATH, header=True).show(10)
     spark.stop()

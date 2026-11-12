@@ -1,76 +1,76 @@
-from airflow import DAG
-import pendulum
-from airflow.macros import ds_add
-from airflow.operators.python import PythonOperator
-from airflow.operators.bash import BashOperator
-import pandas as pd
+"""Coleta semanal de temperaturas (Open-Meteo archive API) para Boston -> CSVs locais."""
 import os
+from datetime import date, datetime, timedelta, timezone
+
+import pandas as pd
+import pendulum
 import requests
-from datetime import datetime, timedelta
+from airflow.providers.standard.operators.python import PythonOperator
+from airflow.sdk import DAG
 
-def data_extract(**context):
-    today = datetime.utcnow().date()
-    data_interval_end = context['data_interval_end'].date()
+BASE_DIR = "/opt/airflow/data/climate_data_project"
+LAT, LON = 42.3601, -71.0589
+API_URL = "https://archive-api.open-meteo.com/v1/archive"
 
-    start_date = data_interval_end
-    end_date = start_date + timedelta(days=6)
 
-    if end_date >= today:
-        start_date = start_date - timedelta(days=7)
-        end_date = start_date + timedelta(days=6)
+def week_window(interval_end: date, today: date) -> tuple[date, date]:
+    """Semana de 7 dias a partir do fim do intervalo; recua uma semana se ainda não terminou."""
+    start = interval_end
+    end = start + timedelta(days=6)
+    if end >= today:
+        start -= timedelta(days=7)
+        end = start + timedelta(days=6)
+    return start, end
 
-    start_str = start_date.strftime('%Y-%m-%d')
-    end_str = end_date.strftime('%Y-%m-%d')
 
-    lat = 42.3601
-    lon = -71.0589
+def data_extract(dag_run, **_):
+    # Runs manuais no Airflow 3 não têm data interval: usa run_after como referência
+    interval_end = dag_run.data_interval_end or dag_run.run_after
+    today = datetime.now(timezone.utc).date()
+    start, end = week_window(interval_end.date(), today)
+    start_str, end_str = start.isoformat(), end.isoformat()
 
-    url = "https://archive-api.open-meteo.com/v1/archive"
-    params = {
-        "latitude": lat,
-        "longitude": lon,
-        "start_date": start_str,
-        "end_date": end_str,
-        "daily": "temperature_2m_min,temperature_2m_mean,temperature_2m_max,weathercode",
-        "timezone": "America/New_York"
-    }
-
-    response = requests.get(url, params=params)
+    response = requests.get(
+        API_URL,
+        params={
+            "latitude": LAT,
+            "longitude": LON,
+            "start_date": start_str,
+            "end_date": end_str,
+            "daily": "temperature_2m_min,temperature_2m_mean,temperature_2m_max,weathercode",
+            "timezone": "America/New_York",
+        },
+        timeout=30,
+    )
     response.raise_for_status()
-    data_json = response.json()["daily"]
-    df = pd.DataFrame(data_json)
+    df = pd.DataFrame(response.json()["daily"])
 
-    folder_path = f'/opt/airflow/data/climate_data_project/week{start_str}/'
+    folder_path = os.path.join(BASE_DIR, f"week{start_str}")
     os.makedirs(folder_path, exist_ok=True)
+    df.to_csv(os.path.join(folder_path, "raw_data.csv"), index=False)
 
-    df.to_csv(os.path.join(folder_path, 'raw_data.csv'), index=False)
-
-    df.rename(columns={
+    df = df.rename(columns={
         "temperature_2m_min": "tempmin",
         "temperature_2m_mean": "temp",
         "temperature_2m_max": "tempmax",
-        "time": "datetime"
-    }, inplace=True)
+        "time": "datetime",
+    })
+    df[["datetime", "tempmin", "temp", "tempmax"]].to_csv(os.path.join(folder_path, "temps.csv"), index=False)
+    df[["datetime", "weathercode"]].to_csv(os.path.join(folder_path, "conditions.csv"), index=False)
+    print(f"Dados de {start_str} a {end_str} salvos em {folder_path}")
 
-    df[['datetime', 'tempmin', 'temp', 'tempmax']].to_csv(os.path.join(folder_path, 'temps.csv'), index=False)
-    df[['datetime', 'weathercode']].to_csv(os.path.join(folder_path, 'conditions.csv'), index=False)
 
 with DAG(
-    "climate_data",
+    dag_id="climate_data",
     start_date=pendulum.datetime(2025, 6, 20, tz="UTC"),
-    schedule='0 0 * * 1',  
-    catchup=True
+    schedule="0 0 * * 1",
+    # catchup desligado: ligar geraria uma run por semana desde start_date.
+    # Para reprocessar um período use: airflow dags backfill climate_data -s ... -e ...
+    catchup=False,
+    tags=["api", "local-files"],
 ) as dag:
 
-    task1 = BashOperator(
-        task_id='create_folder',
-        bash_command='mkdir -p "/home/airflow/host_documents/climate_data_project/week{{data_interval_end.strftime("%Y-%m-%d")}}"'
+    PythonOperator(
+        task_id="data_extract",
+        python_callable=data_extract,
     )
-
-    task2 = PythonOperator(
-    task_id="data_extract",
-    python_callable=data_extract
-)
-
-    task1 >> task2
-

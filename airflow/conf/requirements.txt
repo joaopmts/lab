@@ -1,5 +1,9 @@
-apache-airflow-providers-apache-spark
+# 6.x passou a depender de pyspark-client>=4 (Spark Connect), que sobrescreve o módulo
+# pyspark e quebra SparkSession clássica contra o cluster Spark 3.5. Manter < 6.
+apache-airflow-providers-apache-spark>=5.3.2,<6
 apache-airflow-providers-databricks
+apache-airflow-providers-trino
+# Mesma versão do cluster Spark
 pyspark==3.5.4
 praw
 spotipy

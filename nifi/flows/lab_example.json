@@ -1,0 +1,1069 @@
+{
+  "flowContents": {
+    "identifier": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8",
+    "instanceIdentifier": "cdd0142e-01a1-1000-09d3-629a2a15ba5b",
+    "name": "lab_example",
+    "comments": "Exemplo de integração do lab: eventos -> Kafka (lab_events) + MinIO (bronze/nifi/events)",
+    "position": {
+      "x": 600.0,
+      "y": 0.0
+    },
+    "processGroups": [],
+    "remoteProcessGroups": [],
+    "processors": [
+      {
+        "identifier": "e942ce3e-acdb-3adf-8024-780362127010",
+        "instanceIdentifier": "cdd01509-01a1-1000-ab51-60076c51743d",
+        "name": "Gerar evento",
+        "comments": "",
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "type": "org.apache.nifi.processors.standard.GenerateFlowFile",
+        "bundle": {
+          "group": "org.apache.nifi",
+          "artifact": "nifi-standard-nar",
+          "version": "2.5.0"
+        },
+        "properties": {
+          "character-set": "UTF-8",
+          "File Size": "0B",
+          "mime-type": "application/json",
+          "generate-ff-custom-text": "{\"event_id\":\"${UUID()}\",\"source\":\"nifi\",\"event_type\":\"${literal('click,view,purchase'):getDelimitedField(${random():mod(3):plus(1)})}\",\"value\":${random():mod(100000):toDecimal():divide(100)},\"ts\":\"${now():format('yyyy-MM-dd HH:mm:ss', 'GMT')}\"}",
+          "Batch Size": "1",
+          "Unique FlowFiles": "false",
+          "Data Format": "Text"
+        },
+        "propertyDescriptors": {
+          "character-set": {
+            "name": "character-set",
+            "displayName": "Character Set",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "File Size": {
+            "name": "File Size",
+            "displayName": "File Size",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "mime-type": {
+            "name": "mime-type",
+            "displayName": "Mime Type",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "generate-ff-custom-text": {
+            "name": "generate-ff-custom-text",
+            "displayName": "Custom Text",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Batch Size": {
+            "name": "Batch Size",
+            "displayName": "Batch Size",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Unique FlowFiles": {
+            "name": "Unique FlowFiles",
+            "displayName": "Unique FlowFiles",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Data Format": {
+            "name": "Data Format",
+            "displayName": "Data Format",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          }
+        },
+        "style": {},
+        "schedulingPeriod": "5 sec",
+        "schedulingStrategy": "TIMER_DRIVEN",
+        "executionNode": "ALL",
+        "penaltyDuration": "30 sec",
+        "yieldDuration": "1 sec",
+        "bulletinLevel": "WARN",
+        "runDurationMillis": 0,
+        "concurrentlySchedulableTaskCount": 1,
+        "autoTerminatedRelationships": [],
+        "scheduledState": "ENABLED",
+        "retryCount": 10,
+        "retriedRelationships": [],
+        "backoffMechanism": "PENALIZE_FLOWFILE",
+        "maxBackoffPeriod": "10 mins",
+        "componentType": "PROCESSOR",
+        "groupIdentifier": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8"
+      },
+      {
+        "identifier": "8ef168cc-98dd-3529-989d-77b805d33a10",
+        "instanceIdentifier": "cdd0152c-01a1-1000-8f69-a1e14a6aed44",
+        "name": "Publicar em lab_events",
+        "comments": "",
+        "position": {
+          "x": -300.0,
+          "y": 250.0
+        },
+        "type": "org.apache.nifi.kafka.processors.PublishKafka",
+        "bundle": {
+          "group": "org.apache.nifi",
+          "artifact": "nifi-kafka-nar",
+          "version": "2.5.0"
+        },
+        "properties": {
+          "compression.type": "none",
+          "acks": "all",
+          "Message Demarcator": null,
+          "Kafka Key Attribute Encoding": "utf-8",
+          "Record Reader": null,
+          "Record Metadata Strategy": "FROM_PROPERTIES",
+          "Transactional ID Prefix": null,
+          "Header Encoding": "UTF-8",
+          "max.request.size": "1 MB",
+          "Topic Name": "lab_events",
+          "Kafka Key": null,
+          "partition": null,
+          "Kafka Connection Service": "97b06dad-d46c-3cd0-afba-243fa946ab04",
+          "Publish Strategy": "USE_VALUE",
+          "Record Key Writer": null,
+          "Failure Strategy": "Route to Failure",
+          "partitioner.class": "org.apache.kafka.clients.producer.internals.DefaultPartitioner",
+          "Record Writer": null,
+          "Transactions Enabled": "false",
+          "Message Key Field": null,
+          "FlowFile Attribute Header Pattern": null
+        },
+        "propertyDescriptors": {
+          "compression.type": {
+            "name": "compression.type",
+            "displayName": "Compression Type",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "acks": {
+            "name": "acks",
+            "displayName": "Delivery Guarantee",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Message Demarcator": {
+            "name": "Message Demarcator",
+            "displayName": "Message Demarcator",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Kafka Key Attribute Encoding": {
+            "name": "Kafka Key Attribute Encoding",
+            "displayName": "Kafka Key Attribute Encoding",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Record Reader": {
+            "name": "Record Reader",
+            "displayName": "Record Reader",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Record Metadata Strategy": {
+            "name": "Record Metadata Strategy",
+            "displayName": "Record Metadata Strategy",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Transactional ID Prefix": {
+            "name": "Transactional ID Prefix",
+            "displayName": "Transactional ID Prefix",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Header Encoding": {
+            "name": "Header Encoding",
+            "displayName": "Header Encoding",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "max.request.size": {
+            "name": "max.request.size",
+            "displayName": "Max Request Size",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Topic Name": {
+            "name": "Topic Name",
+            "displayName": "Topic Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Kafka Key": {
+            "name": "Kafka Key",
+            "displayName": "Kafka Key",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "partition": {
+            "name": "partition",
+            "displayName": "Partition",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Kafka Connection Service": {
+            "name": "Kafka Connection Service",
+            "displayName": "Kafka Connection Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Publish Strategy": {
+            "name": "Publish Strategy",
+            "displayName": "Publish Strategy",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Record Key Writer": {
+            "name": "Record Key Writer",
+            "displayName": "Record Key Writer",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Failure Strategy": {
+            "name": "Failure Strategy",
+            "displayName": "Failure Strategy",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "partitioner.class": {
+            "name": "partitioner.class",
+            "displayName": "Partitioner Class",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Record Writer": {
+            "name": "Record Writer",
+            "displayName": "Record Writer",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Transactions Enabled": {
+            "name": "Transactions Enabled",
+            "displayName": "Transactions Enabled",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Message Key Field": {
+            "name": "Message Key Field",
+            "displayName": "Message Key Field",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "FlowFile Attribute Header Pattern": {
+            "name": "FlowFile Attribute Header Pattern",
+            "displayName": "FlowFile Attribute Header Pattern",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          }
+        },
+        "style": {},
+        "schedulingPeriod": "0 sec",
+        "schedulingStrategy": "TIMER_DRIVEN",
+        "executionNode": "ALL",
+        "penaltyDuration": "30 sec",
+        "yieldDuration": "1 sec",
+        "bulletinLevel": "WARN",
+        "runDurationMillis": 0,
+        "concurrentlySchedulableTaskCount": 1,
+        "autoTerminatedRelationships": [
+          "success",
+          "failure"
+        ],
+        "scheduledState": "ENABLED",
+        "retryCount": 10,
+        "retriedRelationships": [],
+        "backoffMechanism": "PENALIZE_FLOWFILE",
+        "maxBackoffPeriod": "10 mins",
+        "componentType": "PROCESSOR",
+        "groupIdentifier": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8"
+      },
+      {
+        "identifier": "3ace8f32-c921-3e71-92fa-6e18caeaa361",
+        "instanceIdentifier": "cdd01551-01a1-1000-f147-502e0b9f55fd",
+        "name": "Gravar no MinIO (bronze/nifi/events)",
+        "comments": "",
+        "position": {
+          "x": 300.0,
+          "y": 250.0
+        },
+        "type": "org.apache.nifi.processors.aws.s3.PutS3Object",
+        "bundle": {
+          "group": "org.apache.nifi",
+          "artifact": "nifi-aws-nar",
+          "version": "2.5.0"
+        },
+        "properties": {
+          "FullControl User List": "${s3.permissions.full.users}",
+          "Owner": "${s3.owner}",
+          "proxy-configuration-service": null,
+          "Resource Transfer Source": "FLOWFILE_CONTENT",
+          "Cache Control": null,
+          "s3-object-remove-tags-prefix": "false",
+          "Endpoint Override URL": "http://minio:9000",
+          "File Resource Service": null,
+          "Multipart Upload Max Age Threshold": "7 days",
+          "custom-signer-class-name": null,
+          "canned-acl": "${s3.permissions.cannedacl}",
+          "custom-signer-module-location": null,
+          "Signer Override": "Default Signature",
+          "Content Type": null,
+          "server-side-encryption": "None",
+          "Write ACL User List": "${s3.permissions.writeacl.users}",
+          "encryption-service": null,
+          "Read ACL User List": "${s3.permissions.readacl.users}",
+          "Content Disposition": null,
+          "Storage Class": "Standard",
+          "Multipart Part Size": "5 GB",
+          "use-chunked-encoding": "true",
+          "Object Key": "nifi/events/${now():format('yyyyMMdd')}/${filename}.json",
+          "AWS Credentials Provider service": "a55e4438-0593-3a78-8ef6-8449d6eb6f10",
+          "Multipart Threshold": "5 GB",
+          "s3-object-tags-prefix": null,
+          "SSL Context Service": null,
+          "Bucket": "bronze",
+          "Multipart Upload AgeOff Interval": "60 min",
+          "use-path-style-access": "true",
+          "Write Permission User List": "${s3.permissions.write.users}",
+          "Communications Timeout": "30 secs",
+          "Region": "us-east-1",
+          "Read Permission User List": "${s3.permissions.read.users}",
+          "Expiration Time Rule": null,
+          "s3-temporary-directory-multipart": "${java.io.tmpdir}"
+        },
+        "propertyDescriptors": {
+          "FullControl User List": {
+            "name": "FullControl User List",
+            "displayName": "FullControl User List",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Owner": {
+            "name": "Owner",
+            "displayName": "Owner",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "proxy-configuration-service": {
+            "name": "proxy-configuration-service",
+            "displayName": "Proxy Configuration Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Resource Transfer Source": {
+            "name": "Resource Transfer Source",
+            "displayName": "Resource Transfer Source",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Cache Control": {
+            "name": "Cache Control",
+            "displayName": "Cache Control",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "s3-object-remove-tags-prefix": {
+            "name": "s3-object-remove-tags-prefix",
+            "displayName": "Remove Tag Prefix",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Endpoint Override URL": {
+            "name": "Endpoint Override URL",
+            "displayName": "Endpoint Override URL",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "File Resource Service": {
+            "name": "File Resource Service",
+            "displayName": "File Resource Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Multipart Upload Max Age Threshold": {
+            "name": "Multipart Upload Max Age Threshold",
+            "displayName": "Multipart Upload Max Age Threshold",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "custom-signer-class-name": {
+            "name": "custom-signer-class-name",
+            "displayName": "Custom Signer Class Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "canned-acl": {
+            "name": "canned-acl",
+            "displayName": "Canned ACL",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "custom-signer-module-location": {
+            "name": "custom-signer-module-location",
+            "displayName": "Custom Signer Module Location",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false,
+            "resourceDefinition": {
+              "cardinality": "MULTIPLE",
+              "resourceTypes": [
+                "FILE",
+                "DIRECTORY"
+              ]
+            }
+          },
+          "Signer Override": {
+            "name": "Signer Override",
+            "displayName": "Signer Override",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Content Type": {
+            "name": "Content Type",
+            "displayName": "Content Type",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "server-side-encryption": {
+            "name": "server-side-encryption",
+            "displayName": "Server Side Encryption",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Write ACL User List": {
+            "name": "Write ACL User List",
+            "displayName": "Write ACL User List",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "encryption-service": {
+            "name": "encryption-service",
+            "displayName": "Encryption Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Read ACL User List": {
+            "name": "Read ACL User List",
+            "displayName": "Read ACL User List",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Content Disposition": {
+            "name": "Content Disposition",
+            "displayName": "Content Disposition",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Storage Class": {
+            "name": "Storage Class",
+            "displayName": "Storage Class",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Multipart Part Size": {
+            "name": "Multipart Part Size",
+            "displayName": "Multipart Part Size",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "use-chunked-encoding": {
+            "name": "use-chunked-encoding",
+            "displayName": "Use Chunked Encoding",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Object Key": {
+            "name": "Object Key",
+            "displayName": "Object Key",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "AWS Credentials Provider service": {
+            "name": "AWS Credentials Provider service",
+            "displayName": "AWS Credentials Provider Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Multipart Threshold": {
+            "name": "Multipart Threshold",
+            "displayName": "Multipart Threshold",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "s3-object-tags-prefix": {
+            "name": "s3-object-tags-prefix",
+            "displayName": "Object Tags Prefix",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "SSL Context Service": {
+            "name": "SSL Context Service",
+            "displayName": "SSL Context Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Bucket": {
+            "name": "Bucket",
+            "displayName": "Bucket",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Multipart Upload AgeOff Interval": {
+            "name": "Multipart Upload AgeOff Interval",
+            "displayName": "Multipart Upload AgeOff Interval",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "use-path-style-access": {
+            "name": "use-path-style-access",
+            "displayName": "Use Path Style Access",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Write Permission User List": {
+            "name": "Write Permission User List",
+            "displayName": "Write Permission User List",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Communications Timeout": {
+            "name": "Communications Timeout",
+            "displayName": "Communications Timeout",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Region": {
+            "name": "Region",
+            "displayName": "Region",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Read Permission User List": {
+            "name": "Read Permission User List",
+            "displayName": "Read Permission User List",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Expiration Time Rule": {
+            "name": "Expiration Time Rule",
+            "displayName": "Expiration Time Rule",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "s3-temporary-directory-multipart": {
+            "name": "s3-temporary-directory-multipart",
+            "displayName": "Temporary Directory Multipart State",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          }
+        },
+        "style": {},
+        "schedulingPeriod": "0 sec",
+        "schedulingStrategy": "TIMER_DRIVEN",
+        "executionNode": "ALL",
+        "penaltyDuration": "30 sec",
+        "yieldDuration": "1 sec",
+        "bulletinLevel": "WARN",
+        "runDurationMillis": 0,
+        "concurrentlySchedulableTaskCount": 1,
+        "autoTerminatedRelationships": [
+          "success",
+          "failure"
+        ],
+        "scheduledState": "ENABLED",
+        "retryCount": 10,
+        "retriedRelationships": [],
+        "backoffMechanism": "PENALIZE_FLOWFILE",
+        "maxBackoffPeriod": "10 mins",
+        "componentType": "PROCESSOR",
+        "groupIdentifier": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8"
+      }
+    ],
+    "inputPorts": [],
+    "outputPorts": [],
+    "connections": [
+      {
+        "identifier": "ecdcb333-c31d-370d-b3ee-838b751a569b",
+        "instanceIdentifier": "cdd01575-01a1-1000-aab6-4206200dd2af",
+        "source": {
+          "id": "e942ce3e-acdb-3adf-8024-780362127010",
+          "type": "PROCESSOR",
+          "groupId": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8",
+          "name": "Gerar evento",
+          "comments": "",
+          "instanceIdentifier": "cdd01509-01a1-1000-ab51-60076c51743d"
+        },
+        "destination": {
+          "id": "8ef168cc-98dd-3529-989d-77b805d33a10",
+          "type": "PROCESSOR",
+          "groupId": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8",
+          "name": "Publicar em lab_events",
+          "comments": "",
+          "instanceIdentifier": "cdd0152c-01a1-1000-8f69-a1e14a6aed44"
+        },
+        "labelIndex": 1,
+        "zIndex": 0,
+        "selectedRelationships": [
+          "success"
+        ],
+        "backPressureObjectThreshold": 10000,
+        "backPressureDataSizeThreshold": "1 GB",
+        "flowFileExpiration": "0 sec",
+        "prioritizers": [],
+        "bends": [],
+        "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE",
+        "loadBalanceCompression": "DO_NOT_COMPRESS",
+        "componentType": "CONNECTION",
+        "groupIdentifier": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8"
+      },
+      {
+        "identifier": "dc23f282-861f-386d-a045-414c568d8d9d",
+        "instanceIdentifier": "cdd01595-01a1-1000-f0fa-03db5e53fd3a",
+        "source": {
+          "id": "e942ce3e-acdb-3adf-8024-780362127010",
+          "type": "PROCESSOR",
+          "groupId": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8",
+          "name": "Gerar evento",
+          "comments": "",
+          "instanceIdentifier": "cdd01509-01a1-1000-ab51-60076c51743d"
+        },
+        "destination": {
+          "id": "3ace8f32-c921-3e71-92fa-6e18caeaa361",
+          "type": "PROCESSOR",
+          "groupId": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8",
+          "name": "Gravar no MinIO (bronze/nifi/events)",
+          "comments": "",
+          "instanceIdentifier": "cdd01551-01a1-1000-f147-502e0b9f55fd"
+        },
+        "labelIndex": 1,
+        "zIndex": 0,
+        "selectedRelationships": [
+          "success"
+        ],
+        "backPressureObjectThreshold": 10000,
+        "backPressureDataSizeThreshold": "1 GB",
+        "flowFileExpiration": "0 sec",
+        "prioritizers": [],
+        "bends": [],
+        "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE",
+        "loadBalanceCompression": "DO_NOT_COMPRESS",
+        "componentType": "CONNECTION",
+        "groupIdentifier": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8"
+      }
+    ],
+    "labels": [],
+    "funnels": [],
+    "controllerServices": [
+      {
+        "identifier": "97b06dad-d46c-3cd0-afba-243fa946ab04",
+        "instanceIdentifier": "cdd01466-01a1-1000-2f9e-bcd164295c23",
+        "name": "Kafka (broker:19092)",
+        "comments": "",
+        "type": "org.apache.nifi.kafka.service.Kafka3ConnectionService",
+        "bundle": {
+          "group": "org.apache.nifi",
+          "artifact": "nifi-kafka-3-service-nar",
+          "version": "2.5.0"
+        },
+        "properties": {
+          "ack.wait.time": "5 sec",
+          "sasl.username": null,
+          "max.poll.records": "10000",
+          "bootstrap.servers": "broker:19092",
+          "sasl.kerberos.service.name": null,
+          "security.protocol": "PLAINTEXT",
+          "SSL Context Service": null,
+          "sasl.mechanism": "GSSAPI",
+          "isolation.level": "read_committed",
+          "oauth2-access-token-provider-service": null,
+          "max.block.ms": "5 sec",
+          "kerberos-user-service": null,
+          "default.api.timeout.ms": "60 sec"
+        },
+        "propertyDescriptors": {
+          "ack.wait.time": {
+            "name": "ack.wait.time",
+            "displayName": "Acknowledgment Wait Time",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.username": {
+            "name": "sasl.username",
+            "displayName": "SASL Username",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "max.poll.records": {
+            "name": "max.poll.records",
+            "displayName": "Max Poll Records",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "bootstrap.servers": {
+            "name": "bootstrap.servers",
+            "displayName": "Bootstrap Servers",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.kerberos.service.name": {
+            "name": "sasl.kerberos.service.name",
+            "displayName": "Kerberos Service Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "security.protocol": {
+            "name": "security.protocol",
+            "displayName": "Security Protocol",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "SSL Context Service": {
+            "name": "SSL Context Service",
+            "displayName": "SSL Context Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.mechanism": {
+            "name": "sasl.mechanism",
+            "displayName": "SASL Mechanism",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "isolation.level": {
+            "name": "isolation.level",
+            "displayName": "Transaction Isolation Level",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "oauth2-access-token-provider-service": {
+            "name": "oauth2-access-token-provider-service",
+            "displayName": "OAuth2 Access Token Provider Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "max.block.ms": {
+            "name": "max.block.ms",
+            "displayName": "Max Metadata Wait Time",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "kerberos-user-service": {
+            "name": "kerberos-user-service",
+            "displayName": "Kerberos User Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.password": {
+            "name": "sasl.password",
+            "displayName": "SASL Password",
+            "identifiesControllerService": false,
+            "sensitive": true,
+            "dynamic": false
+          },
+          "default.api.timeout.ms": {
+            "name": "default.api.timeout.ms",
+            "displayName": "Client Timeout",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          }
+        },
+        "controllerServiceApis": [
+          {
+            "type": "org.apache.nifi.kafka.service.api.KafkaConnectionService",
+            "bundle": {
+              "group": "org.apache.nifi",
+              "artifact": "nifi-kafka-service-api-nar",
+              "version": "2.5.0"
+            }
+          }
+        ],
+        "scheduledState": "DISABLED",
+        "bulletinLevel": "WARN",
+        "componentType": "CONTROLLER_SERVICE",
+        "groupIdentifier": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8"
+      },
+      {
+        "identifier": "a55e4438-0593-3a78-8ef6-8449d6eb6f10",
+        "instanceIdentifier": "cdd0148f-01a1-1000-793d-463d0033e043",
+        "name": "MinIO credentials",
+        "comments": "",
+        "type": "org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderControllerService",
+        "bundle": {
+          "group": "org.apache.nifi",
+          "artifact": "nifi-aws-nar",
+          "version": "2.5.0"
+        },
+        "properties": {
+          "profile-name": null,
+          "assume-role-proxy-configuration-service": null,
+          "default-credentials": "false",
+          "Session Time": "3600",
+          "assume-role-ssl-context-service": null,
+          "assume-role-sts-signer-override": "Default Signature",
+          "custom-signer-class-name": null,
+          "Assume Role ARN": null,
+          "custom-signer-module-location": null,
+          "Assume Role Session Name": null,
+          "assume-role-sts-endpoint": null,
+          "assume-role-sts-region": "us-west-2",
+          "Credentials File": null,
+          "assume-role-external-id": null,
+          "anonymous-credentials": "false"
+        },
+        "propertyDescriptors": {
+          "profile-name": {
+            "name": "profile-name",
+            "displayName": "Profile Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Access Key": {
+            "name": "Access Key",
+            "displayName": "Access Key ID",
+            "identifiesControllerService": false,
+            "sensitive": true,
+            "dynamic": false
+          },
+          "assume-role-proxy-configuration-service": {
+            "name": "assume-role-proxy-configuration-service",
+            "displayName": "Assume Role Proxy Configuration Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "default-credentials": {
+            "name": "default-credentials",
+            "displayName": "Use Default Credentials",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Session Time": {
+            "name": "Session Time",
+            "displayName": "Assume Role Session Time",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "assume-role-ssl-context-service": {
+            "name": "assume-role-ssl-context-service",
+            "displayName": "Assume Role SSL Context Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "assume-role-sts-signer-override": {
+            "name": "assume-role-sts-signer-override",
+            "displayName": "Assume Role STS Signer Override",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "custom-signer-class-name": {
+            "name": "custom-signer-class-name",
+            "displayName": "Custom Signer Class Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Assume Role ARN": {
+            "name": "Assume Role ARN",
+            "displayName": "Assume Role ARN",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "custom-signer-module-location": {
+            "name": "custom-signer-module-location",
+            "displayName": "Custom Signer Module Location",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false,
+            "resourceDefinition": {
+              "cardinality": "MULTIPLE",
+              "resourceTypes": [
+                "FILE",
+                "DIRECTORY"
+              ]
+            }
+          },
+          "Assume Role Session Name": {
+            "name": "Assume Role Session Name",
+            "displayName": "Assume Role Session Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "assume-role-sts-endpoint": {
+            "name": "assume-role-sts-endpoint",
+            "displayName": "Assume Role STS Endpoint Override",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "assume-role-sts-region": {
+            "name": "assume-role-sts-region",
+            "displayName": "Assume Role STS Region",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Secret Key": {
+            "name": "Secret Key",
+            "displayName": "Secret Access Key",
+            "identifiesControllerService": false,
+            "sensitive": true,
+            "dynamic": false
+          },
+          "Credentials File": {
+            "name": "Credentials File",
+            "displayName": "Credentials File",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false,
+            "resourceDefinition": {
+              "cardinality": "SINGLE",
+              "resourceTypes": [
+                "FILE"
+              ]
+            }
+          },
+          "assume-role-external-id": {
+            "name": "assume-role-external-id",
+            "displayName": "Assume Role External ID",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "anonymous-credentials": {
+            "name": "anonymous-credentials",
+            "displayName": "Use Anonymous Credentials",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          }
+        },
+        "controllerServiceApis": [
+          {
+            "type": "org.apache.nifi.processors.aws.credentials.provider.AwsCredentialsProviderService",
+            "bundle": {
+              "group": "org.apache.nifi",
+              "artifact": "nifi-aws-service-api-nar",
+              "version": "2.5.0"
+            }
+          },
+          {
+            "type": "org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderService",
+            "bundle": {
+              "group": "org.apache.nifi",
+              "artifact": "nifi-aws-service-api-nar",
+              "version": "2.5.0"
+            }
+          }
+        ],
+        "scheduledState": "DISABLED",
+        "bulletinLevel": "WARN",
+        "componentType": "CONTROLLER_SERVICE",
+        "groupIdentifier": "05f7c6f6-cf19-3681-bc4d-f3229e224fe8"
+      }
+    ],
+    "defaultFlowFileExpiration": "0 sec",
+    "defaultBackPressureObjectThreshold": 10000,
+    "defaultBackPressureDataSizeThreshold": "1 GB",
+    "scheduledState": "ENABLED",
+    "executionEngine": "INHERITED",
+    "maxConcurrentTasks": 1,
+    "statelessFlowTimeout": "1 min",
+    "flowFileConcurrency": "UNBOUNDED",
+    "flowFileOutboundPolicy": "STREAM_WHEN_AVAILABLE",
+    "componentType": "PROCESS_GROUP"
+  },
+  "externalControllerServices": {},
+  "parameterContexts": {},
+  "flowEncodingVersion": "1.0",
+  "parameterProviders": {},
+  "latest": false
+}
