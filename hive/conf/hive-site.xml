@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+  hive-site.xml do Hive Metastore standalone (apache/hive:4.0.0).
+  Montado em HIVE_CUSTOM_CONF_DIR junto com spark/conf/core-site.xml (config S3A).
+  A conexão JDBC com o Postgres é passada via SERVICE_OPTS no docker-compose.yml.
+-->
+<configuration>
+    <!-- Warehouse padrão no MinIO (bucket criado pelo serviço minio-init) -->
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>s3a://warehouse/</value>
+    </property>
+
+    <property>
+        <name>metastore.metastore.event.db.notification.api.auth</name>
+        <value>false</value>
+    </property>
+
+    <!-- Valores herdados do hive-site.xml padrão da imagem -->
+    <property>
+        <name>hive.server2.enable.doAs</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>hive.exec.scratchdir</name>
+        <value>/opt/hive/scratch_dir</value>
+    </property>
+    <property>
+        <name>hive.user.install.directory</name>
+        <value>/opt/hive/install_dir</value>
+    </property>
+</configuration>

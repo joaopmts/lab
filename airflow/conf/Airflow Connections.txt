@@ -1,46 +1,53 @@
 Airflow Connections
+===================
 
-Reddit Connection
-id   reddit_default
-Conn Type HTTP
-host https://www.reddit.com
-login reddit api login
-pw reddit api secret
-Extra Fields JSON
-{
-  "client_id": "RRdifwlscWCwv2QR8dFrzA",
-  "client_secret": "L5wi16mrNGDTmHJGlLu-ZyqaGS8dSA",
-  "user_agent": "airflow:reddit_etl:v1.0 (by u/joaopmts)",
-  "redirect_uri": "http://localhost:8080"
-}
+Modelo das connections usadas pelos DAGs. NÃO coloque segredos reais neste arquivo
+(ele é versionado). Cadastre-as em Admin > Connections na UI do Airflow, ou via CLI:
 
-Spark Connection
-id   spark_default
-Conn Type Spark
-host spark://spark-master
-port 7077
-Extra Fields JSON
+  docker compose exec airflow-apiserver airflow connections add <conn_id> ...
+
+------------------------------------------------------------------
+spark_default  (já definida automaticamente pelo docker-compose via
+                AIRFLOW_CONN_SPARK_DEFAULT — não precisa cadastrar)
+------------------------------------------------------------------
+Conn Type  Spark
+Host       spark://spark-master
+Port       7077
+Extra
 {
-  "queue": null,
   "deploy-mode": "client",
-  "spark-binary": "spark-submit",
-  "namespace": null,
-  "principal": null,
-  "keytab": null,
-  "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem",
-  "spark.hadoop.fs.s3a.endpoint": "http://minio:9000",
-  "spark.hadoop.fs.s3a.access.key": "eDFFCzvdNdoeLlJkZhXI",
-  "spark.hadoop.fs.s3a.secret.key": "gU3PQYFs6K60DvP5ut52zMQJAU3M3rW4XtCY9lqb",
-  "spark.hadoop.fs.s3a.path.style.access": "true",
-  "spark.hadoop.fs.s3a.connection.ssl.enabled": "false",
-  "driver_class_path": "/opt/airflow/conf/jars/hadoop-aws-3.3.4.jar,/opt/airflow/conf/jars/aws-java-sdk-bundle-1.12.262.jar"
+  "spark-binary": "spark-submit"
 }
 
-Spotify Connection
+As configurações S3A (endpoint MinIO, path-style, etc.) ficam em
+spark/conf/core-site.xml, copiado para as imagens do Spark e do Airflow.
+As credenciais vêm de S3A_ACCESS_KEY / S3A_SECRET_KEY do .env
+(expostas como AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY nos containers).
+Os jars hadoop-aws / aws-java-sdk-bundle já estão em $SPARK_HOME/jars.
 
-id   spotify_default
-Conn Type HTTP
-host https://accounts.spotify.com
-login spofity api login
-pw spofity api secret
+------------------------------------------------------------------
+reddit_default
+------------------------------------------------------------------
+Conn Type  HTTP
+Host       https://www.reddit.com
+Extra
+{
+  "client_id": "<REDDIT_CLIENT_ID>",
+  "client_secret": "<REDDIT_CLIENT_SECRET>",
+  "user_agent": "airflow:reddit_etl:v1.0 (by u/<seu_usuario>)"
+}
 
+------------------------------------------------------------------
+spotify_default
+------------------------------------------------------------------
+Conn Type  HTTP
+Host       https://accounts.spotify.com
+Login      <SPOTIFY_CLIENT_ID>
+Password   <SPOTIFY_CLIENT_SECRET>
+
+------------------------------------------------------------------
+databricks_default  (somente para o DAG coingeko-airflow-databricks-azure)
+------------------------------------------------------------------
+Conn Type  Databricks
+Host       https://<workspace>.azuredatabricks.net
+Password   <PERSONAL_ACCESS_TOKEN>

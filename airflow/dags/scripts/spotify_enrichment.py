@@ -1,87 +1,80 @@
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
-from pyspark.sql import SparkSession
-from spotify_utils import Manipulation
-import time
+"""Job Spark: enriquece as faixas com o ano de lançamento via API do Spotify.
+
+Credenciais em SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET (definidas pelo DAG via env_vars).
+"""
 import argparse
+import os
+import time
+
+import spotipy
+from pyspark.sql import SparkSession
+from spotipy.oauth2 import SpotifyClientCredentials
+
+from lab_utils import write_by_ext
+
+BATCH_SIZE = 50  # limite do endpoint /tracks
+
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--output_path")
-    p.add_argument("--output_format")
-    p.add_argument("--client_id")
-    p.add_argument("--client_secret")
-    p.add_argument("--temp")
+    p.add_argument("--temp", required=True)
+    p.add_argument("--output_path", required=True)
+    p.add_argument("--output_format", default="parquet")
     return p.parse_args()
 
-def spotify_conn(client_id, client_secret):
-    sp = spotipy.Spotify(
-            auth_manager=SpotifyClientCredentials(
-                client_id=client_id,
-                client_secret=client_secret
-            )
+
+def spotify_conn():
+    return spotipy.Spotify(
+        auth_manager=SpotifyClientCredentials(
+            client_id=os.environ["SPOTIFY_CLIENT_ID"],
+            client_secret=os.environ["SPOTIFY_CLIENT_SECRET"],
         )
-    
-    return sp
+    )
+
 
 def get_year(sp, track_ids, years):
-    results = sp.tracks(track_ids)["tracks"]
-    for t in results:
-        date = t["album"]["release_date"]
-        year = int(date.split("-")[0])
+    for t in sp.tracks(track_ids)["tracks"]:
+        if not t:
+            continue
+        release_date = (t.get("album") or {}).get("release_date") or ""
+        year = int(release_date.split("-")[0]) if release_date[:4].isdigit() else None
         years.append((t["id"], year))
 
 
 def enrich_with_year(df, sp, spark, sleep_time=0.1):
+    all_results, batch = [], []
+    n_rows = n_batches = 0
 
-    ids_iter = df.select("id").toLocalIterator()
-
-    all_results = []   
-    batch = []         
-    batch_size = 50
-    mcounter = 0
-    batchcounter = 0   
-    for row in ids_iter:
-        mcounter += 1
-        batch.append(row["id"])
-        if len(batch) == batch_size:
-            get_year(sp, batch, all_results)
-            print(f"Processado batch com {len(batch)} músicas, linha: {mcounter}")
-            batch = []
-            time.sleep(sleep_time)
-            batchcounter += 1
-            print(f"Processado batch {batchcounter}")
-
-    if batch:
-        batchcounter += 1
+    def flush():
+        nonlocal batch, n_batches
         get_year(sp, batch, all_results)
-        print(f"Processado último batch com {len(batch)} músicas")
-        print(f"Processado batch {batchcounter}")
+        n_batches += 1
+        print(f"Batch {n_batches}: {len(batch)} músicas (linha {n_rows})")
+        batch = []
+        time.sleep(sleep_time)
 
-    df_years = spark.createDataFrame(all_results, ["id", "year"])
+    for row in df.select("id").toLocalIterator():
+        n_rows += 1
+        batch.append(row["id"])
+        if len(batch) == BATCH_SIZE:
+            flush()
+    if batch:
+        flush()
 
-    df_enriched = df.join(df_years, on="id", how="left")
-    
-    return df_enriched
+    df_years = spark.createDataFrame(all_results, "id string, year int")
+    return df.join(df_years, on="id", how="left")
 
 
 def main():
-
     args = parse_args()
-
-    spark = (
-        SparkSession.builder
-        .appName("spotify_enrichment")
-        .getOrCreate()
-    )
+    spark = SparkSession.builder.appName("spotify_enrichment").getOrCreate()
 
     df = spark.read.parquet(args.temp)
+    df = enrich_with_year(df, spotify_conn(), spark)
+    write_by_ext(df, args.output_format, args.output_path, mode="overwrite")
 
-    sp = spotify_conn(args.client_id, args.client_secret)
+    spark.stop()
 
-    df = enrich_with_year(df, sp, spark)
-
-    Manipulation.write_by_ext(df, args.output_format, args.output_path)
 
 if __name__ == "__main__":
     main()

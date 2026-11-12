@@ -1,63 +1,59 @@
-# dags/reddit_bronze_s3a_spark.py
+"""Dataset Spotify (Kaggle) -> tratamento -> enriquecimento com ano via API -> silver.
+
+Manual (schedule=None): a entrada é um dataset estático e o enriquecimento chama a API
+do Spotify para cada faixa — rodar de hora em hora só repetia o mesmo trabalho.
+Credenciais vão para o driver por ``env_vars`` (Jinja), não por argumentos.
+"""
 from datetime import datetime
-from airflow import DAG
+
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
-from hook.spark_hook import sparkhook
-from hook.spotify_hook import SpotifyHook
+from airflow.sdk import DAG
 
-input_path = f"s3a://bronze/recomendacao/kaggle-spotify"
-output_path = f"s3a://silver/recomendacao/kaggle_spotify"
-output_format = "parquet"
-input_format = "csv"
-temp = f"s3a://temp/spotify"
+SCRIPTS = "/opt/airflow/dags/scripts"
+LAB_UTILS = f"{SCRIPTS}/lab_utils.py"
 
+INPUT_PATH = "s3a://bronze/recomendacao/kaggle-spotify"
+INPUT_FORMAT = "csv"
+OUTPUT_PATH = "s3a://silver/recomendacao/kaggle_spotify"
+OUTPUT_FORMAT = "parquet"
+TEMP = "s3a://temp/spotify"
 
 with DAG(
     dag_id="spotify_api_dag",
     start_date=datetime(2025, 1, 1),
-    schedule="@hourly",
+    schedule=None,
     catchup=False,
+    tags=["spotify", "silver", "s3a", "spark"],
 ) as dag:
 
-    spark = sparkhook()
-    confhook, dcphook = spark.get_confdcp()
-
-    s = SpotifyHook()
-    client_id, client_secret = s.get_spotify_auth()
-
-    task1 = SparkSubmitOperator(
+    df_manipulation = SparkSubmitOperator(
         task_id="df_manipulation",
-        application="/opt/airflow/dags/scripts/spotify_manipulation.py", 
+        application=f"{SCRIPTS}/spotify_manipulation.py",
+        py_files=LAB_UTILS,
         name="manipulation",
-        conn_id="spark_default", 
+        conn_id="spark_default",
         application_args=[
-            "--output_format", output_format,
-            "--temp", temp,
-            "--input_path", input_path,
-            "--input_format", input_format,
+            "--input_path", INPUT_PATH,
+            "--input_format", INPUT_FORMAT,
+            "--temp", TEMP,
         ],
-        conf=confhook,
-        jars=dcphook,
-        driver_class_path=dcphook,
-        dag=dag
     )
 
-    task2 = SparkSubmitOperator(
+    df_enrichment = SparkSubmitOperator(
         task_id="df_enrichment",
-        application="/opt/airflow/dags/scripts/spotify_enrichment.py", 
+        application=f"{SCRIPTS}/spotify_enrichment.py",
+        py_files=LAB_UTILS,
         name="enrichment",
-        conn_id="spark_default", 
+        conn_id="spark_default",
+        env_vars={
+            "SPOTIFY_CLIENT_ID": "{{ conn.spotify_default.login }}",
+            "SPOTIFY_CLIENT_SECRET": "{{ conn.spotify_default.password }}",
+        },
         application_args=[
-            "--output_path", output_path,
-            "--output_format", output_format,
-            "--client_id", client_id,
-            "--client_secret", client_secret,
-            "--temp", temp,
+            "--temp", TEMP,
+            "--output_path", OUTPUT_PATH,
+            "--output_format", OUTPUT_FORMAT,
         ],
-        conf=confhook,
-        jars=dcphook,
-        driver_class_path=dcphook,
-        dag=dag
     )
 
-    task1 >> task2
+    df_manipulation >> df_enrichment

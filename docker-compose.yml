@@ -1,3 +1,12 @@
+# Data Engineering Lab
+# Variáveis sensíveis vêm do arquivo .env (modelo: .env.example).
+
+x-s3a-env: &s3a-env
+  # Lidas pela cadeia padrão de credenciais do S3A (Spark/Hadoop) e pelo Trino
+  AWS_ACCESS_KEY_ID: ${S3A_ACCESS_KEY}
+  AWS_SECRET_ACCESS_KEY: ${S3A_SECRET_KEY}
+  AWS_REGION: us-east-1
+
 x-airflow-common:
   &airflow-common
   build:
@@ -6,35 +15,57 @@ x-airflow-common:
   image: airflow-spark:latest
   environment:
     &airflow-common-env
+    <<: *s3a-env
+    AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
+    # Garante `from scripts...` em qualquer processo (inclusive `airflow tasks test` na CLI)
+    PYTHONPATH: '/opt/airflow/dags'
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__CORE__AUTH_MANAGER: airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager
-    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://admin:admin@postgres/airflow_db
-    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://admin:admin@postgres/airflow_db
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-admin}:${POSTGRES_PASSWORD:-admin}@postgres/airflow_db
+    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-admin}:${POSTGRES_PASSWORD:-admin}@postgres/airflow_db
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
-    AIRFLOW__CORE__FERNET_KEY: 'MJHCwrC7Ojgt_gMGIsUNLeGtw31qXDnZCCenIFv93J0='
+    AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY:?defina AIRFLOW_FERNET_KEY no .env}
+    AIRFLOW__API__SECRET_KEY: ${AIRFLOW_API_SECRET_KEY:?defina AIRFLOW_API_SECRET_KEY no .env}
+    AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET:?defina AIRFLOW_JWT_SECRET no .env}
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
-    AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
-
+    # Connection do Spark versionada aqui (sem segredos). Reddit/Spotify/Databricks: ver airflow/conf/Airflow Connections.txt
+    AIRFLOW_CONN_SPARK_DEFAULT: '{"conn_type": "spark", "host": "spark://spark-master", "port": 7077, "extra": {"deploy-mode": "client", "spark-binary": "spark-submit"}}'
+    AIRFLOW_CONN_TRINO_DEFAULT: '{"conn_type": "trino", "host": "trino", "port": 8080, "login": "airflow"}'
   volumes:
     - ./airflow/dags:/opt/airflow/dags
     - ./airflow/config:/opt/airflow/config
     - ./airflow/plugins:/opt/airflow/plugins
     - ./airflow/data:/opt/airflow/data
     - ./airflow/logs:/opt/airflow/logs
+    - ./airflow/tests:/opt/airflow/tests:ro
   user: "${AIRFLOW_UID:-50000}:0"
   networks:
-      - spark-net
+    - spark-net
   depends_on:
     &airflow-common-depends-on
     redis:
       condition: service_healthy
     postgres:
       condition: service_healthy
-      
+
+x-spark-common: &spark-common
+  build:
+    context: .
+    dockerfile: ./spark/conf/Dockerfile
+  image: lab-spark:latest
+  networks:
+    - spark-net
+  depends_on:
+    minio-init:
+      condition: service_completed_successfully
+    metastore:
+      condition: service_healthy
+
 services:
+  # ------------------------------------------------------------------ Kafka
   broker:
     image: apache/kafka:4.1.0
     hostname: broker
@@ -60,103 +91,103 @@ services:
       KAFKA_LOG_DIRS: '/var/lib/kafka/data'
     volumes:
       - ./kafka/data:/var/lib/kafka/data
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 > /dev/null 2>&1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
     networks:
       - spark-net
 
-  nifi:
-    hostname: nifi
+  kafka-ui:
+    # provectuslabs/kafka-ui foi descontinuado; kafbat é o fork mantido (mesmas variáveis)
+    image: kafbat/kafka-ui:v1.3.0
+    container_name: kafka-ui
+    ports:
+      - "3042:8080"
     depends_on:
-      - broker
+      broker:
+        condition: service_healthy
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: broker:19092
+      # Login obrigatório na UI (ela permite apagar tópicos e publicar mensagens)
+      AUTH_TYPE: LOGIN_FORM
+      SPRING_SECURITY_USER_NAME: ${KAFKA_UI_USERNAME:-admin}
+      SPRING_SECURITY_USER_PASSWORD: ${KAFKA_UI_PASSWORD:?defina KAFKA_UI_PASSWORD no .env}
+    networks:
+      - spark-net
+
+  # ------------------------------------------------------------------ NiFi
+  nifi:
     image: apache/nifi:2.5.0
+    hostname: nifi
     container_name: nifi
+    depends_on:
+      broker:
+        condition: service_healthy
     ports:
       - "8443:8443"
     environment:
-      - SINGLE_USER_CREDENTIALS_USERNAME=nifi
-      - SINGLE_USER_CREDENTIALS_PASSWORD=nifiadmin1234!@
-      - TZ=America/Sao_Paulo
+      SINGLE_USER_CREDENTIALS_USERNAME: ${NIFI_USERNAME:-nifi}
+      SINGLE_USER_CREDENTIALS_PASSWORD: ${NIFI_PASSWORD:?defina NIFI_PASSWORD no .env}
+      NIFI_SENSITIVE_PROPS_KEY: ${NIFI_SENSITIVE_PROPS_KEY:?defina NIFI_SENSITIVE_PROPS_KEY no .env}
+      # Acesso pelo host via port mapping (https://localhost:8443/nifi)
+      NIFI_WEB_PROXY_HOST: localhost:8443
+      TZ: America/Sao_Paulo
     volumes:
+      # conf em volume nomeado: no primeiro uso o Docker o preenche com a config padrão
+      # da imagem; o NiFi gera keystore/truststore sozinho. Nada disso vai para o git.
+      # Flows versionados ficam em nifi/flows/ (importe pela UI: "Upload flow definition").
+      - nifi-conf:/opt/nifi/nifi-current/conf
       - nifi-logs:/opt/nifi/nifi-current/logs
       - nifi-state:/opt/nifi/nifi-current/state
       - nifi-content:/opt/nifi/nifi-current/content_repository
       - nifi-database:/opt/nifi/nifi-current/database_repository
       - nifi-flowfile:/opt/nifi/nifi-current/flowfile_repository
       - nifi-provenance:/opt/nifi/nifi-current/provenance_repository
-      - ./nifi/conf:/opt/nifi/nifi-current/conf
     networks:
       - spark-net
 
-  kafka-ui:
-    image: provectuslabs/kafka-ui:latest
-    container_name: kafka-ui
-    ports:
-      - "3042:8080"
-    depends_on:
-      - broker
-    environment:
-      KAFKA_CLUSTERS_0_NAME: local
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: broker:19092
-    networks:
-      - spark-net
-
+  # ------------------------------------------------------------------ Storage
   minio:
     image: joaopmts99/minio:latest
     container_name: minio
     environment:
-      MINIO_ROOT_USER: admin
-      MINIO_ROOT_PASSWORD: minioadmin
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-admin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?defina MINIO_ROOT_PASSWORD no .env}
     volumes:
       - ./minio/data:/data
     ports:
       - "9000:9000"
       - "9001:9001"
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     networks:
       - spark-net
 
-  spark-master:
-    build:
-      context: .
-      dockerfile: ./spark/conf/Dockerfile
-    image: sparkmaster:latest
-    container_name: spark-master
-    hostname: spark-master
-    user: "0:0"
-    environment:
-      - SPARK_MODE=master
-      - HADOOP_CONF_DIR=/opt/bitnami/spark/conf
-      - AWS_ACCESS_KEY_ID=${S3AACESS}
-      - AWS_SECRET_ACCESS_KEY=${S3ASECRET}
-    ports:
-      - 8180:8080
-      - 7077:7077
-      - 8891:8888
-    volumes:
-      - ./spark/jupyter_home/notebooks:/home/jupyter/notebooks
-    networks:
-      - spark-net
+  # Cria os buckets usados pelo lab (idempotente) e encerra
+  minio-init:
+    image: joaopmts99/minio:latest
+    container_name: minio-init
     depends_on:
-      postgres:
+      minio:
         condition: service_healthy
-
-  spark-worker:
-    build:
-      context: .
-      dockerfile: ./spark/conf/Dockerfile
-    image: sparkworker:latest
-    container_name: spark-worker
-    hostname: spark-worker
     environment:
-      - SPARK_MODE=worker
-      - SPARK_MASTER_URL=spark://spark-master:7077
-      - AWS_ACCESS_KEY_ID=${S3AACESS}
-      - AWS_SECRET_ACCESS_KEY=${S3ASECRET}
-    ports:
-      - 8881:8081
-    depends_on:
-      postgres:
-        condition: service_healthy
-      spark-master:
-        condition: service_started
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-admin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        mc alias set lab http://minio:9000 "$$MINIO_ROOT_USER" "$$MINIO_ROOT_PASSWORD"
+        for b in bronze silver temp warehouse teste; do mc mb --ignore-existing "lab/$$b"; done
+    restart: "no"
     networks:
       - spark-net
 
@@ -165,62 +196,25 @@ services:
     container_name: postgres
     hostname: postgres
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: admin 
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
+      POSTGRES_DB: admin
+      HIVE_DB_PASSWORD: ${HIVE_DB_PASSWORD:-password}
     ports:
       - 5442:5432
     volumes:
       - ./postgres/postgres-db-volume:/var/lib/postgresql/data
-      - ./postgres:/util
+      # Executado apenas na primeira inicialização (diretório de dados vazio)
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
     networks:
       - spark-net
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U admin -d admin"]
+      # -h 127.0.0.1: testa via TCP. Durante o init o servidor temporário só escuta no
+      # socket local, então sem isso o healthcheck ficava "healthy" cedo demais.
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U $${POSTGRES_USER} -d admin"]
       interval: 10s
       retries: 5
       start_period: 20s
-
-  metastore:
-    image: apache/hive:4.0.0
-    depends_on:
-      postgres:
-        condition: service_healthy
-    container_name: metastore
-    hostname: metastore
-    environment:
-      DB_DRIVER: postgres
-      SERVICE_NAME: 'metastore'
-      SERVICE_OPTS: '-Xmx1G -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
-                     -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore_db
-                     -Djavax.jdo.option.ConnectionUserName=hive
-                     -Djavax.jdo.option.ConnectionPassword=password'
-    ports:
-        - '9083:9083'
-    volumes:
-        - warehouse:/opt/hive/data/warehouse
-        - ./assets/postgresql-42.6.0.jar:/opt/hive/lib/postgres.jar
-    networks:
-      - spark-net
-
-  trino:
-    image: trinodb/trino:469
-    container_name: trino
-    hostname: trino
-    ports:
-      - "8085:8080"
-    volumes:
-      - ./trino/conf/config.properties:/etc/trino/config.properties
-      - ./trino/conf/jvm.config:/etc/trino/jvm.config
-      - ./trino/conf/node.properties:/etc/trino/node.properties
-      - ./trino/conf/catalog:/etc/trino/catalog
-    networks:
-      - spark-net
-    depends_on:
-      metastore:
-        condition: service_started
-      minio:
-        condition: service_started
 
   redis:
     image: redis:7.2-bookworm
@@ -235,7 +229,104 @@ services:
     restart: always
     networks:
       - spark-net
-  
+
+  # ------------------------------------------------------------------ Catálogo / SQL
+  metastore:
+    image: apache/hive:4.0.0
+    container_name: metastore
+    hostname: metastore
+    restart: on-failure:5
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio-init:
+        condition: service_completed_successfully
+    environment:
+      <<: *s3a-env
+      DB_DRIVER: postgres
+      SERVICE_NAME: 'metastore'
+      SERVICE_OPTS: >-
+        -Xmx1G
+        -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
+        -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore_db
+        -Djavax.jdo.option.ConnectionUserName=hive
+        -Djavax.jdo.option.ConnectionPassword=${HIVE_DB_PASSWORD:-password}
+      # hive-site.xml + core-site.xml (S3A) são linkados para /opt/hive/conf
+      HIVE_CUSTOM_CONF_DIR: /hive_custom_conf
+      # Habilita s3a:// no metastore (jars já presentes na imagem, fora do classpath padrão)
+      HADOOP_CLASSPATH: /opt/hadoop/share/hadoop/tools/lib/hadoop-aws-3.3.6.jar:/opt/hadoop/share/hadoop/tools/lib/aws-java-sdk-bundle-1.12.367.jar
+    ports:
+      - '9083:9083'
+    volumes:
+      - ./hive/conf/hive-site.xml:/hive_custom_conf/hive-site.xml:ro
+      - ./spark/conf/core-site.xml:/hive_custom_conf/core-site.xml:ro
+      - ./assets/postgresql-42.6.0.jar:/opt/hive/lib/postgres.jar:ro
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/localhost/9083'"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+    networks:
+      - spark-net
+
+  trino:
+    image: trinodb/trino:469
+    container_name: trino
+    hostname: trino
+    ports:
+      - "8085:8080"
+    environment:
+      S3A_ACCESS_KEY: ${S3A_ACCESS_KEY}
+      S3A_SECRET_KEY: ${S3A_SECRET_KEY}
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
+    volumes:
+      - ./trino/conf/config.properties:/etc/trino/config.properties:ro
+      - ./trino/conf/jvm.config:/etc/trino/jvm.config:ro
+      - ./trino/conf/node.properties:/etc/trino/node.properties:ro
+      - ./trino/conf/catalog:/etc/trino/catalog:ro
+    networks:
+      - spark-net
+    depends_on:
+      metastore:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+
+  # ------------------------------------------------------------------ Spark
+  spark-master:
+    <<: *spark-common
+    container_name: spark-master
+    hostname: spark-master
+    environment:
+      <<: *s3a-env
+      SPARK_MODE: master
+      HADOOP_CONF_DIR: /opt/bitnami/spark/conf
+    ports:
+      - 8180:8080
+      - 7077:7077
+      # JupyterLab sem token: exposto apenas em localhost
+      - 127.0.0.1:8891:8888
+    volumes:
+      - ./spark/jupyter_home/notebooks:/home/jupyter/notebooks
+
+  spark-worker:
+    <<: *spark-common
+    container_name: spark-worker
+    hostname: spark-worker
+    environment:
+      <<: *s3a-env
+      SPARK_MODE: worker
+      SPARK_MASTER_URL: spark://spark-master:7077
+      HADOOP_CONF_DIR: /opt/bitnami/spark/conf
+    ports:
+      - 8881:8081
+    depends_on:
+      spark-master:
+        condition: service_started
+
+  # ------------------------------------------------------------------ Airflow
   airflow-apiserver:
     <<: *airflow-common
     command: api-server
@@ -372,35 +463,22 @@ services:
         echo
         echo "Creating missing opt dirs if missing:"
         echo
-        mkdir -v -p /opt/airflow/{logs,dags,plugins,config}
+        mkdir -v -p /opt/airflow/{logs,dags,plugins,config,data}
         echo
         echo "Airflow version:"
         /entrypoint airflow version
-        echo
-        echo "Files in shared volumes:"
-        echo
-        ls -la /opt/airflow/{logs,dags,plugins,config}
         echo
         echo "Running airflow config list to create default config file if missing."
         echo
         /entrypoint airflow config list >/dev/null
         echo
-        echo "Files in shared volumes:"
-        echo
-        ls -la /opt/airflow/{logs,dags,plugins,config}
-        echo
         echo "Change ownership of files in /opt/airflow to ${AIRFLOW_UID}:0"
         echo
         chown -R "${AIRFLOW_UID}:0" /opt/airflow/
         echo
-        echo "Change ownership of files in shared volumes to ${AIRFLOW_UID}:0"
-        echo
-        chown -v -R "${AIRFLOW_UID}:0" /opt/airflow/{logs,dags,plugins,config}
-        echo
         echo "Files in shared volumes:"
         echo
-        ls -la /opt/airflow/{logs,dags,plugins,config}
-
+        ls -la /opt/airflow/{logs,dags,plugins,config,data}
 
     environment:
       <<: *airflow-common-env
@@ -444,17 +522,14 @@ services:
       airflow-init:
         condition: service_completed_successfully
 
-
 volumes:
-  airflow-db-volume:
-  warehouse:
+  nifi-conf:
   nifi-logs:
   nifi-state:
   nifi-content:
   nifi-database:
   nifi-flowfile:
   nifi-provenance:
-  zookeeper-data:
 
 networks:
   spark-net:

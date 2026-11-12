@@ -1,4 +1,11 @@
+<?xml version="1.0"?>
+<!--
+  Configuração S3A (MinIO) compartilhada por Spark, Airflow (driver Spark) e Hive Metastore.
 
+  Credenciais NÃO ficam aqui: o S3A usa a cadeia padrão de providers, que lê
+  AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY do ambiente do container
+  (definidos no docker-compose.yml a partir de S3A_ACCESS_KEY / S3A_SECRET_KEY do .env).
+-->
 <configuration>
     <property>
         <name>fs.defaultFS</name>
@@ -11,8 +18,8 @@
     </property>
 
     <property>
-        <name>fs.s3a.connection.ssl.enabled</name>
-        <value>false</value>
+        <name>fs.s3a.impl</name>
+        <value>org.apache.hadoop.fs.s3a.S3AFileSystem</value>
     </property>
 
     <property>
@@ -21,13 +28,8 @@
     </property>
 
     <property>
-        <name>fs.s3a.access.key</name>
-        <value>${env:AWS_ACCESS_KEY_ID}</value>
-    </property>
-
-    <property>
-        <name>fs.s3a.secret.key</name>
-        <value>${env:AWS_SECRET_ACCESS_KEY}</value>
+        <name>fs.s3a.endpoint.region</name>
+        <value>us-east-1</value>
     </property>
 
     <property>
@@ -36,7 +38,7 @@
     </property>
 
     <property>
-        <name>fs.s3a.impl</name>
-        <value>org.apache.hadoop.fs.s3a.S3AFileSystem</value>
+        <name>fs.s3a.connection.ssl.enabled</name>
+        <value>false</value>
     </property>
 </configuration>
