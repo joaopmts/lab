@@ -25,37 +25,45 @@ The **`docs`** folder contains visual documentation materials for the project, s
 
 ---
 
-## Setup
+## Quick Start
 
-### 1. Environment variables
-
-All credentials live in a local `.env` file, which is **not** versioned.
-
-```powershell
-copy .env.example .env      # Linux/macOS: cp .env.example .env
-```
-
-Fill in `AIRFLOW_FERNET_KEY`, `AIRFLOW_API_SECRET_KEY` and `AIRFLOW_JWT_SECRET`. The commands to generate them are in `.env.example`.
-
-### 2. (Optional) Clean installation
-
-```powershell
-net start com.docker.service
-docker system prune -a --volumes
-```
-
-**WARNING**: this erases **all Docker images and volumes** on your machine, not only the lab's.
-
-### 3. Start everything
-
-```powershell
+```bash
+git clone https://github.com/joaopmts/lab.git
+cd lab
 docker compose up -d --build
 ```
 
-On the first start (empty `postgres/postgres-db-volume`), the script [postgres/init/01-create-databases.sh](postgres/init/01-create-databases.sh) creates `airflow_db`, `metastore_db` and the `hive` user automatically. The `minio-init` service then creates the buckets `bronze`, `silver`, `temp`, `warehouse` and `teste`.
+That's it. No `.env` is needed: every variable has a lab default (see [Credentials](#credentials)). The first build takes a while because it downloads Spark and the jars.
+
+On the first start, everything is set up by itself:
+
+| What | Who does it |
+|---|---|
+| `airflow_db`, `metastore_db` and the `hive` user | [postgres/init/01-create-databases.sh](postgres/init/01-create-databases.sh) |
+| Buckets `bronze`, `silver`, `temp`, `warehouse`, `teste` + a sample file | `minio-init` |
+| Hive Metastore schema, warehouse on `s3a://warehouse/` | `metastore` |
+| Airflow DB, admin user, `spark_default` and `trino_default` connections | `airflow-init` + compose |
+| NiFi flow `lab_example` imported and configured (processors stopped) | `nifi-init` ([nifi/init/import_flows.py](nifi/init/import_flows.py)) |
+
+**Try the integration example:** open Airflow at http://localhost:8084 (`airflow` / `airflow`), unpause and trigger `lab_end_to_end`, then open the notebook `Exemplos/lab_integracao.ipynb` in JupyterLab at http://localhost:8891. More details are in [Integration Example](#integration-example-every-service-talking).
+
+> The defaults are **public**. That is fine on your own machine, but do not expose these ports to the internet. To change passwords and keys, run `copy .env.example .env` (Linux/macOS: `cp`) and edit the file before the first start.
+
+### Useful commands
+
+```powershell
+docker compose ps                     # status
+docker compose logs -f nifi-init      # e.g. watch the NiFi flow import
+docker compose stop                   # stop (keeps data)
+docker compose down -v                # remove containers AND volumes (Kafka, NiFi)
+```
+
+Data that stays on your disk (not versioned): `postgres/postgres-db-volume/`, `minio/data/`, `airflow/logs/`, `airflow/data/`. To start from zero, run `docker compose down -v` and delete those folders.
+
+**WARNING:** `docker system prune -a --volumes` erases **all** Docker images and volumes on your machine, not only the lab's.
 
 <details>
-<summary>Existing installation: Postgres was created before the init script</summary>
+<summary>Upgrading an installation created before the init scripts</summary>
 
 The databases already exist, so nothing needs to be done. If you ever need to create them by hand:
 
@@ -86,18 +94,17 @@ docker compose stop nifi kafka-ui                        # stop what you are not
 ```
 </details>
 
-### 4. Airflow connections
+### Airflow connections
 
-`spark_default` is defined by `docker-compose.yml`. Create the other connections (`reddit_default`, `spotify_default`, `databricks_default`) in **Admin → Connections**, following the template in [airflow/conf/Airflow Connections.txt](airflow/conf/Airflow%20Connections.txt).
+`spark_default` and `trino_default` are defined by `docker-compose.yml`. The example DAGs need nothing else. Create the other connections (`reddit_default`, `spotify_default`, `databricks_default`) in **Admin → Connections**, following the template in [airflow/conf/Airflow Connections.txt](airflow/conf/Airflow%20Connections.txt).
 
----
-
-### 5. NiFi flows
+### NiFi flows
 
 NiFi keeps its configuration (`nifi.properties`, users, certificates, current canvas) in the named volume `nifi-conf`. On first use, Docker fills it with the image defaults and NiFi generates its own self-signed certificate. Nothing in it is versioned.
 
 - **Version a flow:** right-click the process group → *Download flow definition* → save it to `nifi/flows/`.
-- **Restore a flow:** drag a *Process Group* onto the canvas → *Upload* (browse icon) → choose the JSON file from `nifi/flows/`.
+- **Auto-import:** `nifi-init` imports the flows listed in `NIFI_IMPORT_FLOWS` (compose) on the first start. It is idempotent.
+- **Restore a flow by hand:** drag a *Process Group* onto the canvas → *Upload* (browse icon) → choose the JSON file from `nifi/flows/`.
 - Sensitive properties (passwords, tokens) are **not** included in exported flows. Fill them in again after importing.
 - `NIFI_SENSITIVE_PROPS_KEY` encrypts those values inside the volume. Do not change it on an existing installation, or the flow can no longer be decrypted.
 
@@ -105,7 +112,7 @@ NiFi keeps its configuration (`nifi.properties`, users, certificates, current ca
 
 ## Credentials
 
-The default values are in `.env.example`. Change them in your `.env`.
+Lab defaults (used when there is no `.env`). Change them by creating a `.env` from `.env.example`.
 
 | Service | User | Password |
 |---|---|---|
@@ -266,10 +273,9 @@ Jupyter → Spark: notebooks/Exemplos/lab_integracao.ipynb reads all of the abov
 
 **How to run it**
 
-1. NiFi (https://localhost:8443/nifi): start the `lab_example` process group. It generates one event every 5 s. The flow ships **stopped** so it does not fill MinIO/Kafka.
-   - On a fresh installation, import it from `nifi/flows/lab_example.json` (*Process Group → Upload*).
-   - Then fill in again the *Secret Key* of the `MinIO credentials` controller service, and enable the controller services.
-2. Airflow (http://localhost:8084): trigger `lab_end_to_end`.
+1. *(Optional)* NiFi (https://localhost:8443/nifi): start the `lab_example` process group. It generates one event every 5 s.
+   `nifi-init` already imported and configured it; it ships **stopped** so it does not fill MinIO/Kafka.
+2. Airflow (http://localhost:8084): unpause and trigger `lab_end_to_end`. It works even with NiFi stopped, because it produces its own events.
 3. JupyterLab (http://localhost:8891): open `Exemplos/lab_integracao.ipynb`.
 4. Kafka UI (http://localhost:3042): watch the `lab_events` and `lab_events_summary` topics.
 
@@ -322,11 +328,13 @@ lab/
 ├── hive/conf/hive-site.xml       # Metastore warehouse on MinIO
 ├── trino/conf/                   # Single-node coordinator + catalogs
 ├── postgres/init/                # Init script (databases + hive user)
-├── nifi/flows/                   # Exported flow definitions (lab_example.json, Teste.json)
+├── nifi/
+│   ├── flows/                    # Exported flow definitions (lab_example.json, Teste.json)
+│   └── init/import_flows.py      # Imports the flows on the first start (nifi-init)
 ├── assets/postgresql-42.6.0.jar  # JDBC driver for the Hive Metastore
 └── docs/images/
 
 # Generated at runtime and not versioned:
-# postgres/postgres-db-volume/, minio/, kafka/data/, airflow/logs/, airflow/data/
-# NiFi configuration lives in the named Docker volume `nifi-conf`
+# postgres/postgres-db-volume/, minio/, airflow/logs/, airflow/data/
+# Docker volumes: kafka-data, nifi-conf (+ NiFi repositories)
 ```

@@ -1,10 +1,12 @@
 # Data Engineering Lab
-# Variáveis sensíveis vêm do arquivo .env (modelo: .env.example).
+# Sobe sem nenhuma configuração: todas as variáveis têm um valor padrão de LAB.
+# Para trocar senhas/chaves, crie um .env a partir de .env.example.
+# ATENÇÃO: os padrões são públicos. Use só em máquina local, nunca exposto à internet.
 
 x-s3a-env: &s3a-env
   # Lidas pela cadeia padrão de credenciais do S3A (Spark/Hadoop) e pelo Trino
-  AWS_ACCESS_KEY_ID: ${S3A_ACCESS_KEY}
-  AWS_SECRET_ACCESS_KEY: ${S3A_SECRET_KEY}
+  AWS_ACCESS_KEY_ID: ${S3A_ACCESS_KEY:-admin}
+  AWS_SECRET_ACCESS_KEY: ${S3A_SECRET_KEY:-minioadmin}
   AWS_REGION: us-east-1
 
 x-airflow-common:
@@ -24,9 +26,9 @@ x-airflow-common:
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-admin}:${POSTGRES_PASSWORD:-admin}@postgres/airflow_db
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-admin}:${POSTGRES_PASSWORD:-admin}@postgres/airflow_db
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
-    AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY:?defina AIRFLOW_FERNET_KEY no .env}
-    AIRFLOW__API__SECRET_KEY: ${AIRFLOW_API_SECRET_KEY:?defina AIRFLOW_API_SECRET_KEY no .env}
-    AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET:?defina AIRFLOW_JWT_SECRET no .env}
+    AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY:-AAcRSQ4MayO_4XZp1T71P4JqQlXsEMZZbCI5_QokoAg=}
+    AIRFLOW__API__SECRET_KEY: ${AIRFLOW_API_SECRET_KEY:-lab-api-secret-change-me}
+    AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET:-lab-jwt-secret-change-me-0123456789}
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
@@ -90,7 +92,9 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_LOG_DIRS: '/var/lib/kafka/data'
     volumes:
-      - ./kafka/data:/var/lib/kafka/data
+      # volume nomeado: no Linux um bind mount criado pelo Docker pertence ao root e o
+      # broker (uid 1000) não consegue escrever
+      - kafka-data:/var/lib/kafka/data
     healthcheck:
       test: ["CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 > /dev/null 2>&1"]
       interval: 15s
@@ -115,7 +119,7 @@ services:
       # Login obrigatório na UI (ela permite apagar tópicos e publicar mensagens)
       AUTH_TYPE: LOGIN_FORM
       SPRING_SECURITY_USER_NAME: ${KAFKA_UI_USERNAME:-admin}
-      SPRING_SECURITY_USER_PASSWORD: ${KAFKA_UI_PASSWORD:?defina KAFKA_UI_PASSWORD no .env}
+      SPRING_SECURITY_USER_PASSWORD: ${KAFKA_UI_PASSWORD:-kafkaadmin}
     networks:
       - spark-net
 
@@ -131,8 +135,8 @@ services:
       - "8443:8443"
     environment:
       SINGLE_USER_CREDENTIALS_USERNAME: ${NIFI_USERNAME:-nifi}
-      SINGLE_USER_CREDENTIALS_PASSWORD: ${NIFI_PASSWORD:?defina NIFI_PASSWORD no .env}
-      NIFI_SENSITIVE_PROPS_KEY: ${NIFI_SENSITIVE_PROPS_KEY:?defina NIFI_SENSITIVE_PROPS_KEY no .env}
+      SINGLE_USER_CREDENTIALS_PASSWORD: ${NIFI_PASSWORD:-nifiadmin1234!@}
+      NIFI_SENSITIVE_PROPS_KEY: ${NIFI_SENSITIVE_PROPS_KEY:-lab-nifi-sensitive-key-change-me}
       # Acesso pelo host via port mapping (https://localhost:8443/nifi)
       NIFI_WEB_PROXY_HOST: localhost:8443
       TZ: America/Sao_Paulo
@@ -150,13 +154,34 @@ services:
     networks:
       - spark-net
 
+  # Importa nifi/flows/lab_example.json no canvas na primeira subida (idempotente) e encerra
+  nifi-init:
+    image: apache/nifi:2.5.0
+    container_name: nifi-init
+    depends_on:
+      - nifi
+    entrypoint: ["python3", "/init/import_flows.py"]
+    environment:
+      NIFI_URL: https://nifi:8443
+      NIFI_USERNAME: ${NIFI_USERNAME:-nifi}
+      NIFI_PASSWORD: ${NIFI_PASSWORD:-nifiadmin1234!@}
+      NIFI_IMPORT_FLOWS: lab_example
+      S3A_ACCESS_KEY: ${S3A_ACCESS_KEY:-admin}
+      S3A_SECRET_KEY: ${S3A_SECRET_KEY:-minioadmin}
+    volumes:
+      - ./nifi/init:/init:ro
+      - ./nifi/flows:/flows:ro
+    restart: "no"
+    networks:
+      - spark-net
+
   # ------------------------------------------------------------------ Storage
   minio:
     image: joaopmts99/minio:latest
     container_name: minio
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER:-admin}
-      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?defina MINIO_ROOT_PASSWORD no .env}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
     volumes:
       - ./minio/data:/data
     ports:
@@ -180,13 +205,15 @@ services:
         condition: service_healthy
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER:-admin}
-      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
     entrypoint: ["/bin/sh", "-c"]
     command:
       - |
         set -e
         mc alias set lab http://minio:9000 "$$MINIO_ROOT_USER" "$$MINIO_ROOT_PASSWORD"
         for b in bronze silver temp warehouse teste; do mc mb --ignore-existing "lab/$$b"; done
+        # dado de exemplo para o DAG s3a_consult_test (só se ainda não existir)
+        mc stat lab/teste/reddit/exemplo.csv >/dev/null 2>&1 || printf 'id,title\n1,hello\n2,world\n' | mc pipe lab/teste/reddit/exemplo.csv
     restart: "no"
     networks:
       - spark-net
@@ -277,8 +304,8 @@ services:
     ports:
       - "8085:8080"
     environment:
-      S3A_ACCESS_KEY: ${S3A_ACCESS_KEY}
-      S3A_SECRET_KEY: ${S3A_SECRET_KEY}
+      S3A_ACCESS_KEY: ${S3A_ACCESS_KEY:-admin}
+      S3A_SECRET_KEY: ${S3A_SECRET_KEY:-minioadmin}
       POSTGRES_USER: ${POSTGRES_USER:-admin}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
     volumes:
@@ -417,7 +444,7 @@ services:
     command:
       - -c
       - |
-        if [[ -z "${AIRFLOW_UID}" ]]; then
+        if [[ -z "${AIRFLOW_UID:-50000}" ]]; then
           echo
           echo -e "\033[1;33mWARNING!!!: AIRFLOW_UID not set!\e[0m"
           echo "If you are on Linux, you SHOULD follow the instructions below to set "
@@ -472,9 +499,9 @@ services:
         echo
         /entrypoint airflow config list >/dev/null
         echo
-        echo "Change ownership of files in /opt/airflow to ${AIRFLOW_UID}:0"
+        echo "Change ownership of files in /opt/airflow to ${AIRFLOW_UID:-50000}:0"
         echo
-        chown -R "${AIRFLOW_UID}:0" /opt/airflow/
+        chown -R "${AIRFLOW_UID:-50000}:0" /opt/airflow/
         echo
         echo "Files in shared volumes:"
         echo
@@ -523,6 +550,7 @@ services:
         condition: service_completed_successfully
 
 volumes:
+  kafka-data:
   nifi-conf:
   nifi-logs:
   nifi-state:
